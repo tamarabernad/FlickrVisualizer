@@ -8,6 +8,7 @@
 
 #import "TBWThumbsViewController.h"
 #import "TBWThumbsVM.h"
+#import "TBWThumbCell.h"
 @interface TBWThumbsViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic, strong) TBWThumbsVM *viewModel;
@@ -27,9 +28,14 @@
 
 #pragma mark - Life cycle
 - (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    UINib *cellNib = [UINib nibWithNibName:NSStringFromClass([TBWThumbCell class]) bundle:[NSBundle mainBundle]];
+    [self.collectionView registerNib:cellNib forCellWithReuseIdentifier:NSStringFromClass([TBWThumbCell class])];
+
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
-    [super viewDidLoad];
+
 }
 - (void)viewDidAppear:(BOOL)animated{
     [self.viewModel retrieveDataWithSuccess:^{

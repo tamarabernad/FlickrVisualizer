@@ -13,6 +13,6 @@
 + (void)getImagesWithTags:(NSString *)tags withSuccess:(void (^)(id))success failure:(void (^)(NSError *))failure{
     TBWFlickrService *service = [TBWFlickrService new];
     //TODO: make the per page pass per parmeter
-    [service getObjectsWithParams:@{@"tags":tags, @"per_page":@(15)} Success:success failure:failure];
+    [service getObjectsWithParams:@{@"tags":tags, @"per_page":@"15"} Success:success failure:failure];
 }
 @end

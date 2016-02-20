@@ -14,9 +14,9 @@
     [[FlickrKit sharedFlickrKit] call:@"flickr.photos.search" args:params maxCacheAge:FKDUMaxAgeOneHour completion:^(NSDictionary *response, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (response) {
-                // extract images from the response dictionary
+                success(response);
             } else {
-                // show the error
+                failure(error);
             }
         });
     }];

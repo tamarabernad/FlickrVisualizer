@@ -29,6 +29,12 @@
 		63B381311C7843B000A094BF /* TBWThumbsVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B381301C7843B000A094BF /* TBWThumbsVM.m */; };
 		63B381321C7843B000A094BF /* TBWThumbsVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B381301C7843B000A094BF /* TBWThumbsVM.m */; };
 		63B381331C7843B000A094BF /* TBWThumbsVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B381301C7843B000A094BF /* TBWThumbsVM.m */; };
+		63B381441C78486B00A094BF /* TBWThumbCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B381421C78486B00A094BF /* TBWThumbCell.m */; };
+		63B381451C78486B00A094BF /* TBWThumbCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B381421C78486B00A094BF /* TBWThumbCell.m */; };
+		63B381461C78486B00A094BF /* TBWThumbCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B381421C78486B00A094BF /* TBWThumbCell.m */; };
+		63B381471C78486B00A094BF /* TBWThumbCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B381431C78486B00A094BF /* TBWThumbCell.xib */; };
+		63B381481C78486B00A094BF /* TBWThumbCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B381431C78486B00A094BF /* TBWThumbCell.xib */; };
+		63B381491C78486B00A094BF /* TBWThumbCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B381431C78486B00A094BF /* TBWThumbCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +82,9 @@
 		63B381301C7843B000A094BF /* TBWThumbsVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBWThumbsVM.m; sourceTree = "<group>"; };
 		63B381351C78447500A094BF /* MBXListViewModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBXListViewModelProtocol.h; sourceTree = "<group>"; };
 		63B381361C78454300A094BF /* MBXAsyncViewModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBXAsyncViewModelProtocol.h; sourceTree = "<group>"; };
+		63B381411C78486B00A094BF /* TBWThumbCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBWThumbCell.h; sourceTree = "<group>"; };
+		63B381421C78486B00A094BF /* TBWThumbCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBWThumbCell.m; sourceTree = "<group>"; };
+		63B381431C78486B00A094BF /* TBWThumbCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBWThumbCell.xib; sourceTree = "<group>"; };
 		8DEED9724C4C6EE7A0722752 /* libPods-FlickrVisualizerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlickrVisualizerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC343D603393A199B9C20AB7 /* Pods-FlickrVisualizerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrVisualizerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrVisualizerTests/Pods-FlickrVisualizerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CDEFEE61CD1EFA28C5C21182 /* Pods-FlickrVisualizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrVisualizer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrVisualizer/Pods-FlickrVisualizer.debug.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +157,7 @@
 		6304636E1C778CD2004DAF2B /* FlickrVisualizer */ = {
 			isa = PBXGroup;
 			children = (
+				63B381371C78482200A094BF /* View */,
 				63B381341C78445600A094BF /* Utils */,
 				63B3812E1C7843A100A094BF /* ViewModel */,
 				63B381281C78427700A094BF /* Controllers */,
@@ -227,6 +237,16 @@
 				63B381361C78454300A094BF /* MBXAsyncViewModelProtocol.h */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		63B381371C78482200A094BF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				63B381411C78486B00A094BF /* TBWThumbCell.h */,
+				63B381421C78486B00A094BF /* TBWThumbCell.m */,
+				63B381431C78486B00A094BF /* TBWThumbCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		AEFB528D372D2E389C4CCC30 /* Pods */ = {
@@ -353,6 +373,7 @@
 			files = (
 				6304637F1C778CD3004DAF2B /* LaunchScreen.storyboard in Resources */,
 				6304637C1C778CD3004DAF2B /* Assets.xcassets in Resources */,
+				63B381471C78486B00A094BF /* TBWThumbCell.xib in Resources */,
 				6304637A1C778CD2004DAF2B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,6 +382,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63B381481C78486B00A094BF /* TBWThumbCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +390,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63B381491C78486B00A094BF /* TBWThumbCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +495,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				630463741C778CD2004DAF2B /* AppDelegate.m in Sources */,
+				63B381441C78486B00A094BF /* TBWThumbCell.m in Sources */,
 				63B381311C7843B000A094BF /* TBWThumbsVM.m in Sources */,
 				630463A51C77907E004DAF2B /* TBWDataProvider.m in Sources */,
 				63B3812B1C7842DB00A094BF /* TBWThumbsViewController.m in Sources */,
@@ -485,6 +509,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				630463A61C77907E004DAF2B /* TBWDataProvider.m in Sources */,
+				63B381451C78486B00A094BF /* TBWThumbCell.m in Sources */,
 				63B381321C7843B000A094BF /* TBWThumbsVM.m in Sources */,
 				6304638A1C778CD3004DAF2B /* FlickrVisualizerTests.m in Sources */,
 				630463AB1C7790FC004DAF2B /* TBWFlickrService.m in Sources */,
@@ -501,6 +526,7 @@
 				630463A71C77907E004DAF2B /* TBWDataProvider.m in Sources */,
 				630463951C778CD3004DAF2B /* FlickrVisualizerUITests.m in Sources */,
 				630463AC1C7790FC004DAF2B /* TBWFlickrService.m in Sources */,
+				63B381461C78486B00A094BF /* TBWThumbCell.m in Sources */,
 				63B3812D1C7842DB00A094BF /* TBWThumbsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
