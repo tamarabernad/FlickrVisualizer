@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MBXBaseService.h"
 
-@interface TBWFlickrService : NSObject
-- (void)getObjectsWithParams:(NSDictionary *)params Success:(void (^)(id results))success failure:(void (^)(NSError *failure))failure;
+@interface TBWFlickrService : MBXBaseService
+
 @end

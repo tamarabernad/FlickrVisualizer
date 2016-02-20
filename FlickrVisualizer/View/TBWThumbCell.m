@@ -18,15 +18,19 @@
 
 #pragma mark - public
 - (void)setImageUrl:(NSString *)url{
+    [self.activityIndicator startAnimating];
+    
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     [request addValue:@"image/*" forHTTPHeaderField:@"Accept"];
     
     TBWThumbCell __weak *weakSelf = self;
     [self.imgView setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
         [weakSelf.activityIndicator stopAnimating];
+        self.imgView.image = image;
         
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
         [weakSelf.activityIndicator stopAnimating];
+        self.imgView.image = nil;
     }];
 }
 

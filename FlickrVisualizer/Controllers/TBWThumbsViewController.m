@@ -53,7 +53,9 @@
     return [self.viewModel numberOfItemsInSection:section];
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return nil;
+    TBWThumbCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([TBWThumbCell class]) forIndexPath:indexPath];
+    [cell setImageUrl:[self.viewModel imageUrlForIndexPath:indexPath]];
+    return cell;
 }
 
 @end
