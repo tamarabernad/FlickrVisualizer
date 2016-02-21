@@ -29,53 +29,5 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FlickrVisualizer/Utils/MBXServices/Parsers/MBXBaseParseParser.m"
-            timestampString = "477649233.780787"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "-processWithData:AndCompletion:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[MBXBaseParseParser processWithData:AndCompletion:]"
-                  moduleName = "FlickrVisualizer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tamarabernad/Documents/workspace_xcode/FlickrVisualizer/FlickrVisualizer/Utils/MBXServices/Parsers/MBXBaseParseParser.m"
-                  timestampString = "477649263.724272"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "210">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[MBXBaseParseParser processWithData:AndCompletion:]"
-                  moduleName = "FlickrVisualizer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tamarabernad/Documents/workspace_xcode/FlickrVisualizer/FlickrVisualizer/Utils/MBXServices/Parsers/MBXBaseParseParser.m"
-                  timestampString = "477649263.724615"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "218">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

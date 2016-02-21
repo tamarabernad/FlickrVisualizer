@@ -12,4 +12,5 @@
 @property(nonatomic, strong) NSNumber *page;
 @property(nonatomic, strong) NSNumber *pages;
 @property(nonatomic, strong) NSNumber *perpage;
+- (NSInteger)totalItems;
 @end

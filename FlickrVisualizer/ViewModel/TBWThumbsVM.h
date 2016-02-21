@@ -8,8 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "MBXListViewModelProtocol.h"
-#import "MBXAsyncViewModelProtocol.h"
 
-@interface TBWThumbsVM : NSObject<MBXListViewModelProtocol, MBXAsyncViewModelProtocol>
+@protocol TBWThumbsVMDelegate;
+@interface TBWThumbsVM : NSObject<MBXListViewModelProtocol>
 
+@property(nonatomic, weak)id<TBWThumbsVMDelegate> delegate;
+- (void)retrieveDataForPage:(NSInteger)page WithSuccess:(void (^)(void))success AndFailure:(void (^)(NSError *))failure;
+- (void)setNumberOfItemsPerPage:(NSInteger)nItemsPerPage;
+- (void)checkDataForIndexPath:(NSIndexPath *)indexPath;
+@end
+
+@protocol TBWThumbsVMDelegate <NSObject>
+- (void)TBWThumbsVMDidLoadData:(TBWThumbsVM *)viewModel;
 @end

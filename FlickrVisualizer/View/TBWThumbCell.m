@@ -18,6 +18,7 @@
 
 #pragma mark - public
 - (void)setImageUrl:(NSString *)url{
+    self.imgView.image = nil;
     [self.activityIndicator startAnimating];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];

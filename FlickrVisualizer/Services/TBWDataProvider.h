@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface TBWDataProvider : NSObject
-+ (void) getImagesWithTags:(NSString *)tags withSuccess:(void (^)(id result))success failure:(void (^)(NSError *error))failure;
++ (void)getImagesWithTags:(NSString *)tags
+                  forPage:(NSInteger) page
+         withItemsPerPage:(NSInteger)itemsPerPage
+              withSuccess:(void (^)(id result))success failure:(void (^)(NSError *error))failure;
 @end

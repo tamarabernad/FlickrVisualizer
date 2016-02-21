@@ -9,5 +9,7 @@
 #import "TBWFlickrFeedPage.h"
 
 @implementation TBWFlickrFeedPage
-
+- (NSInteger)totalItems{
+    return [self.perpage integerValue] * [self.pages integerValue];
+}
 @end
