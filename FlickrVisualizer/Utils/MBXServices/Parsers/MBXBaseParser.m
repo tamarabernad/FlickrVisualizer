@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 moodbox. All rights reserved.
 //
 
-#import "MBXBaseParseParser.h"
+#import "MBXBaseParser.h"
 
-@implementation MBXBaseParseParser
+@implementation MBXBaseParser
 + (instancetype)newParserWithModelClass:(Class)modelClass{
     return [[[self class] alloc] initWithModelClass:modelClass];
 }

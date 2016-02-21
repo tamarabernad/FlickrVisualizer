@@ -9,8 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MBXServiceParserProtocol.h"
 
-//TODO: rename this class to MBXBaseParser
-@interface MBXBaseParseParser : NSObject<MBXServiceParserProtocol>
+@interface MBXBaseParser : NSObject<MBXServiceParserProtocol>
 @property (nonatomic) Class modelClass;
 
 + (instancetype)newParserWithModelClass:(Class)modelClass;

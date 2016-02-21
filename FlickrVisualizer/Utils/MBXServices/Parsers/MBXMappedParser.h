@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MBXBaseParseParser.h"
+#import "MBXBaseParser.h"
 
-@interface MBXMappedParser : MBXBaseParseParser
+@interface MBXMappedParser : MBXBaseParser
 + (instancetype)newParserWithModelClass:(Class)modelClass andMapping:(NSDictionary *)mapping;
 @end

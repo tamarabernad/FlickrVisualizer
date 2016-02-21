@@ -56,9 +56,9 @@
 		63B3815E1C784EA000A094BF /* TBWFlickrPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3815D1C784EA000A094BF /* TBWFlickrPhoto.m */; };
 		63B3815F1C784EA000A094BF /* TBWFlickrPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3815D1C784EA000A094BF /* TBWFlickrPhoto.m */; };
 		63B381601C784EA000A094BF /* TBWFlickrPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3815D1C784EA000A094BF /* TBWFlickrPhoto.m */; };
-		63B3816D1C78517700A094BF /* MBXBaseParseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B381691C78517700A094BF /* MBXBaseParseParser.m */; };
-		63B3816E1C78517700A094BF /* MBXBaseParseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B381691C78517700A094BF /* MBXBaseParseParser.m */; };
-		63B3816F1C78517700A094BF /* MBXBaseParseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B381691C78517700A094BF /* MBXBaseParseParser.m */; };
+		63B3816D1C78517700A094BF /* MBXBaseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B381691C78517700A094BF /* MBXBaseParser.m */; };
+		63B3816E1C78517700A094BF /* MBXBaseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B381691C78517700A094BF /* MBXBaseParser.m */; };
+		63B3816F1C78517700A094BF /* MBXBaseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B381691C78517700A094BF /* MBXBaseParser.m */; };
 		63B381751C7854BF00A094BF /* TBWFlickrFeedPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B381741C7854BF00A094BF /* TBWFlickrFeedPage.m */; };
 		63B381761C7854BF00A094BF /* TBWFlickrFeedPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B381741C7854BF00A094BF /* TBWFlickrFeedPage.m */; };
 		63B381771C7854BF00A094BF /* TBWFlickrFeedPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B381741C7854BF00A094BF /* TBWFlickrFeedPage.m */; };
@@ -139,8 +139,8 @@
 		63B381571C784D8700A094BF /* TBWFlickrKitConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBWFlickrKitConnector.m; sourceTree = "<group>"; };
 		63B3815C1C784EA000A094BF /* TBWFlickrPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBWFlickrPhoto.h; sourceTree = "<group>"; };
 		63B3815D1C784EA000A094BF /* TBWFlickrPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBWFlickrPhoto.m; sourceTree = "<group>"; };
-		63B381681C78517700A094BF /* MBXBaseParseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBXBaseParseParser.h; sourceTree = "<group>"; };
-		63B381691C78517700A094BF /* MBXBaseParseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBXBaseParseParser.m; sourceTree = "<group>"; };
+		63B381681C78517700A094BF /* MBXBaseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBXBaseParser.h; sourceTree = "<group>"; };
+		63B381691C78517700A094BF /* MBXBaseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBXBaseParser.m; sourceTree = "<group>"; };
 		63B381731C7854BF00A094BF /* TBWFlickrFeedPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBWFlickrFeedPage.h; sourceTree = "<group>"; };
 		63B381741C7854BF00A094BF /* TBWFlickrFeedPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBWFlickrFeedPage.m; sourceTree = "<group>"; };
 		63B381791C7995BB00A094BF /* TBWDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBWDetailViewController.h; sourceTree = "<group>"; };
@@ -366,8 +366,8 @@
 		63B381671C78517700A094BF /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
-				63B381681C78517700A094BF /* MBXBaseParseParser.h */,
-				63B381691C78517700A094BF /* MBXBaseParseParser.m */,
+				63B381681C78517700A094BF /* MBXBaseParser.h */,
+				63B381691C78517700A094BF /* MBXBaseParser.m */,
 				63B381831C799F7400A094BF /* MBXMappedParser.h */,
 				63B381841C799F7400A094BF /* MBXMappedParser.m */,
 			);
@@ -636,7 +636,7 @@
 				635267C61C79B2CD00134247 /* TBWTagsVM.m in Sources */,
 				63B381851C799F7400A094BF /* MBXMappedParser.m in Sources */,
 				63B3812B1C7842DB00A094BF /* TBWThumbsViewController.m in Sources */,
-				63B3816D1C78517700A094BF /* MBXBaseParseParser.m in Sources */,
+				63B3816D1C78517700A094BF /* MBXBaseParser.m in Sources */,
 				63B3817B1C7995BB00A094BF /* TBWDetailViewController.m in Sources */,
 				63B381531C784C3800A094BF /* MBXBaseService.m in Sources */,
 				630463711C778CD2004DAF2B /* main.m in Sources */,
@@ -660,7 +660,7 @@
 				6304638A1C778CD3004DAF2B /* FlickrVisualizerTests.m in Sources */,
 				635267C71C79B2CD00134247 /* TBWTagsVM.m in Sources */,
 				63B381861C799F7400A094BF /* MBXMappedParser.m in Sources */,
-				63B3816E1C78517700A094BF /* MBXBaseParseParser.m in Sources */,
+				63B3816E1C78517700A094BF /* MBXBaseParser.m in Sources */,
 				63B3812C1C7842DB00A094BF /* TBWThumbsViewController.m in Sources */,
 				63B3817C1C7995BB00A094BF /* TBWDetailViewController.m in Sources */,
 				63B381541C784C3800A094BF /* MBXBaseService.m in Sources */,
@@ -677,7 +677,7 @@
 			files = (
 				63B3818C1C79AD9300A094BF /* TBWThumbsHeaderView.m in Sources */,
 				63B381331C7843B000A094BF /* TBWThumbsVM.m in Sources */,
-				63B3816F1C78517700A094BF /* MBXBaseParseParser.m in Sources */,
+				63B3816F1C78517700A094BF /* MBXBaseParser.m in Sources */,
 				63B381551C784C3800A094BF /* MBXBaseService.m in Sources */,
 				635267D21C7A374500134247 /* MBXRoundedIconButton.m in Sources */,
 				63B3817D1C7995BB00A094BF /* TBWDetailViewController.m in Sources */,

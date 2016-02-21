@@ -9,7 +9,7 @@
 #import "TBWDataProvider.h"
 #import "MBXBaseService.h"
 #import "TBWFlickrKitConnector.h"
-#import "MBXBaseParseParser.h"
+#import "MBXBaseParser.h"
 #import "TBWFlickrPhoto.h"
 #import "TBWFlickrFeedPage.h"
 #import "MBXMappedParser.h"
@@ -20,10 +20,10 @@
     MBXBaseService *service = [[MBXBaseService alloc] initWithParser:nil AndConnector:[TBWFlickrKitConnector new]];
     [service getObjectsWithParams:@{@"tags":tags, @"per_page":[NSString stringWithFormat:@"%li",(long)itemsPerPage], @"page":[NSString stringWithFormat:@"%li",(long)page]} success:^(id responseObject) {
 
-        MBXBaseParseParser *pageParser = [MBXBaseParseParser newParserWithModelClass:[TBWFlickrFeedPage class]];
+        MBXBaseParser *pageParser = [MBXBaseParser newParserWithModelClass:[TBWFlickrFeedPage class]];
         [pageParser processWithData:[responseObject valueForKey:@"photos"] AndCompletion:^(id result) {
             TBWFlickrFeedPage *page = result;
-            MBXBaseParseParser *photosParser = [MBXBaseParseParser newParserWithModelClass:[TBWFlickrPhoto class]];
+            MBXBaseParser *photosParser = [MBXBaseParser newParserWithModelClass:[TBWFlickrPhoto class]];
             [photosParser processDataArray:[responseObject valueForKeyPath:@"photos.photo"] WithCompletion:^(id result) {
                 success(@{@"page":page, @"photos":result});
             }];
