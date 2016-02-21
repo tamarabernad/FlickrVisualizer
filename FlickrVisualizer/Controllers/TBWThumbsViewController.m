@@ -48,6 +48,7 @@
     
 
     //TODO: control rotation and recalculate items per page
+    //TODO: make cell dimention dynamic to have always the same distance between cells
     NSInteger itemsPerCol = floor(self.view.bounds.size.width / CELL_DIM);
     NSInteger itemsPerRow= floor(self.view.bounds.size.height / CELL_DIM);
     [self.viewModel setNumberOfItemsPerPage:itemsPerCol*itemsPerRow];

@@ -19,22 +19,25 @@
     return self;
 }
 - (void)processDataArray:(NSArray *)data WithCompletion:(void (^)(id))completion{
-    NSMutableArray *array = [NSMutableArray new];
-    NSInteger __block nCompleted = 0;
-    if (data.count == 0) {
-        if(completion)completion(@[]);
-    }
-    for (NSObject *object in data) {
-        [self processWithData:object AndCompletion:^(id result) {
-            [array addObject:result];
-            @synchronized(self) {
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^(void){
+        NSMutableArray *array = [NSMutableArray new];
+        NSInteger __block nCompleted = 0;
+        if (data.count == 0) {
+            if(completion)completion(@[]);
+        }
+        for (NSObject *object in data) {
+            [self processWithData:object AndCompletion:^(id result) {
+                [array addObject:result];
                 nCompleted++;
                 if (nCompleted == data.count) {
-                    if(completion)completion(array);
+                    dispatch_async(dispatch_get_main_queue(), ^(void){
+                        if(completion)completion(array);
+                    });
+                    
                 }
-            }
-        }];
-    }
+            }];
+        }
+    });
 }
 - (void)processWithData:(id)data AndCompletion:(void (^)(id))completion{
     id object = [[self.modelClass alloc] init];

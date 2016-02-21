@@ -34,7 +34,7 @@
 }
 - (void)checkDataForIndexPath:(NSIndexPath *)indexPath{
     //TODO: optimize to preload around one page ahead
-    if((indexPath.row >= [self.page.page integerValue] * self.itemsPerPage) && !self.isLoadingData){
+    if((indexPath.row >= [self.page.page integerValue] * [self.page.perpage integerValue]) && !self.isLoadingData){
         [self retrieveDataForPage:[self.page.page integerValue] + 1 WithSuccess:nil AndFailure:nil];
     }
 }
@@ -42,7 +42,7 @@
 - (void)retrieveDataForPage:(NSInteger)page WithSuccess:(void (^)(void))success AndFailure:(void (^)(NSError *))failure{
     self.isLoadingData = YES;
     //TODO make the search tag come through parameter and connect to a UITextfield search
-    [TBWDataProvider getImagesWithTags:@"grass" forPage:page withItemsPerPage:self.itemsPerPage withSuccess:^(id result) {
+    [TBWDataProvider getImagesWithTags:@"grass" forPage:page withItemsPerPage:[self nItemsToRequest] withSuccess:^(id result) {
         self.isLoadingData = NO;
         
         NSMutableArray *arr = [NSMutableArray arrayWithArray:[result valueForKey:@"photos"]];
@@ -65,6 +65,9 @@
 }
 
 #pragma mark - helpers
+- (NSInteger)nItemsToRequest{
+    return self.itemsPerPage * 2;
+}
 - (TBWFlickrPhoto *)photoAtIndex:(NSInteger)index{
     //TODO: scroll is not infinite yet, make it infinite with an circular array checking index on [self.page totalItems]
     return self.data.count - 1 < index ? nil : [self.data objectAtIndex:index];
