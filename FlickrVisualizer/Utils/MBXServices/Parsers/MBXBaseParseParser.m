@@ -1,6 +1,6 @@
 //
 //  MBXBaseParseParser.m
-//  sven-10
+//  mbx
 //
 //  Created by Tamara Bernad on 27/09/15.
 //  Copyright (c) 2015 moodbox. All rights reserved.
@@ -10,7 +10,7 @@
 
 @implementation MBXBaseParseParser
 + (instancetype)newParserWithModelClass:(Class)modelClass{
-    return [[MBXBaseParseParser alloc] initWithModelClass:modelClass];
+    return [[[self class] alloc] initWithModelClass:modelClass];
 }
 - (instancetype)initWithModelClass:(Class)modelClass{
     if(!(self == [super init]))return self;

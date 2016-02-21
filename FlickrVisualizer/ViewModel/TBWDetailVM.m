@@ -26,11 +26,12 @@
     return self.data.title;
 }
 - (NSString *)body{
-    return self.data.description;
+    return self.data.body;
 }
 #pragma mark - MBXAsyncViewModelProtocol
 - (void)retrieveDataWithSuccess:(void (^)(void))success AndFailure:(void (^)(NSError *))failure{
     [TBWDataProvider getPhotoInfoWithId:self.photoId withSuccess:^(id result) {
+        self.data = result;
         success();
     } failure:failure];
 }

@@ -29,7 +29,7 @@
 - (void)getObjectWithParams:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure{
     [self.connector getObjectWithParams:params success:^(id responseObject) {
         if(self.parser != nil)
-            [self.parser processDataArray:responseObject WithCompletion:success];
+            [self.parser processWithData:responseObject AndCompletion:success];
         else
             success(responseObject);
     } failure:failure];

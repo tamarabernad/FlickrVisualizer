@@ -12,6 +12,7 @@
 #import "MBXBaseParseParser.h"
 #import "TBWFlickrPhoto.h"
 #import "TBWFlickrFeedPage.h"
+#import "MBXMappedParser.h"
 
 @implementation TBWDataProvider
 + (void)getImagesWithTags:(NSString *)tags forPage:(NSInteger) page withItemsPerPage:(NSInteger)itemsPerPage withSuccess:(void (^)(id))success failure:(void (^)(NSError *))failure{
@@ -31,19 +32,10 @@
     } failure:failure];
 }
 + (void)getPhotoInfoWithId:(NSString *)photoId withSuccess:(void (^)(id))success failure:(void (^)(NSError *))failure{
-    MBXBaseService *service = [[MBXBaseService alloc] initWithParser:nil AndConnector:[TBWFlickrKitConnector new]];
+    MBXBaseService *service = [[MBXBaseService alloc] initWithParser:[MBXMappedParser newParserWithModelClass:[TBWFlickrPhoto class] andMapping:@{@"body":@"photo.description._content", @"title":@"photo.title._content", @"farm":@"photo.farm", @"server":@"photo.server", @"uid":@"photo.id",@"secret":@"photo.secret"}] AndConnector:[TBWFlickrKitConnector new]];
 
     [service getObjectWithParams:@{@"photo_id":photoId} success:^(id responseObject) {
-        
-        //TODO: put this in an NSOperation or GCD inside the parser utility to parse in background
-        MBXBaseParseParser *pageParser = [MBXBaseParseParser newParserWithModelClass:[TBWFlickrFeedPage class]];
-        [pageParser processWithData:[responseObject valueForKey:@"photos"] AndCompletion:^(id result) {
-            TBWFlickrFeedPage *page = result;
-            MBXBaseParseParser *photosParser = [MBXBaseParseParser newParserWithModelClass:[TBWFlickrPhoto class]];
-            [photosParser processDataArray:[responseObject valueForKeyPath:@"photos.photo"] WithCompletion:^(id result) {
-                success(@{@"page":page, @"photos":result});
-            }];
-        }];
+        success(responseObject);
     } failure:failure];
 }
 @end

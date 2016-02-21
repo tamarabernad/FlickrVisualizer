@@ -53,6 +53,9 @@
 		63B381801C79961600A094BF /* TBWDetailVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3817F1C79961600A094BF /* TBWDetailVM.m */; };
 		63B381811C79961600A094BF /* TBWDetailVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3817F1C79961600A094BF /* TBWDetailVM.m */; };
 		63B381821C79961600A094BF /* TBWDetailVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3817F1C79961600A094BF /* TBWDetailVM.m */; };
+		63B381851C799F7400A094BF /* MBXMappedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B381841C799F7400A094BF /* MBXMappedParser.m */; };
+		63B381861C799F7400A094BF /* MBXMappedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B381841C799F7400A094BF /* MBXMappedParser.m */; };
+		63B381871C799F7400A094BF /* MBXMappedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B381841C799F7400A094BF /* MBXMappedParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +121,8 @@
 		63B3817A1C7995BB00A094BF /* TBWDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBWDetailViewController.m; sourceTree = "<group>"; };
 		63B3817E1C79961600A094BF /* TBWDetailVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBWDetailVM.h; sourceTree = "<group>"; };
 		63B3817F1C79961600A094BF /* TBWDetailVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBWDetailVM.m; sourceTree = "<group>"; };
+		63B381831C799F7400A094BF /* MBXMappedParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBXMappedParser.h; sourceTree = "<group>"; };
+		63B381841C799F7400A094BF /* MBXMappedParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBXMappedParser.m; sourceTree = "<group>"; };
 		8DEED9724C4C6EE7A0722752 /* libPods-FlickrVisualizerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlickrVisualizerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC343D603393A199B9C20AB7 /* Pods-FlickrVisualizerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrVisualizerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrVisualizerTests/Pods-FlickrVisualizerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CDEFEE61CD1EFA28C5C21182 /* Pods-FlickrVisualizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrVisualizer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrVisualizer/Pods-FlickrVisualizer.debug.xcconfig"; sourceTree = "<group>"; };
@@ -317,6 +322,8 @@
 			children = (
 				63B381681C78517700A094BF /* MBXBaseParseParser.h */,
 				63B381691C78517700A094BF /* MBXBaseParseParser.m */,
+				63B381831C799F7400A094BF /* MBXMappedParser.h */,
+				63B381841C799F7400A094BF /* MBXMappedParser.m */,
 			);
 			path = Parsers;
 			sourceTree = "<group>";
@@ -573,6 +580,7 @@
 				63B3815E1C784EA000A094BF /* TBWFlickrPhoto.m in Sources */,
 				63B381311C7843B000A094BF /* TBWThumbsVM.m in Sources */,
 				630463A51C77907E004DAF2B /* TBWDataProvider.m in Sources */,
+				63B381851C799F7400A094BF /* MBXMappedParser.m in Sources */,
 				63B3812B1C7842DB00A094BF /* TBWThumbsViewController.m in Sources */,
 				63B3816D1C78517700A094BF /* MBXBaseParseParser.m in Sources */,
 				63B3817B1C7995BB00A094BF /* TBWDetailViewController.m in Sources */,
@@ -593,6 +601,7 @@
 				63B3815F1C784EA000A094BF /* TBWFlickrPhoto.m in Sources */,
 				63B381321C7843B000A094BF /* TBWThumbsVM.m in Sources */,
 				6304638A1C778CD3004DAF2B /* FlickrVisualizerTests.m in Sources */,
+				63B381861C799F7400A094BF /* MBXMappedParser.m in Sources */,
 				63B3816E1C78517700A094BF /* MBXBaseParseParser.m in Sources */,
 				63B3812C1C7842DB00A094BF /* TBWThumbsViewController.m in Sources */,
 				63B3817C1C7995BB00A094BF /* TBWDetailViewController.m in Sources */,
@@ -613,6 +622,7 @@
 				630463A71C77907E004DAF2B /* TBWDataProvider.m in Sources */,
 				630463951C778CD3004DAF2B /* FlickrVisualizerUITests.m in Sources */,
 				63B381821C79961600A094BF /* TBWDetailVM.m in Sources */,
+				63B381871C799F7400A094BF /* MBXMappedParser.m in Sources */,
 				63B3815A1C784D8700A094BF /* TBWFlickrKitConnector.m in Sources */,
 				63B381461C78486B00A094BF /* TBWThumbCell.m in Sources */,
 				63B3812D1C7842DB00A094BF /* TBWThumbsViewController.m in Sources */,
