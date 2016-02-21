@@ -8,8 +8,6 @@
 
 #import "TBWThumbsVM.h"
 #import "TBWDataProvider.h"
-#import "TBWFlickrPhoto.h"
-#import "FlickrKit.h"
 #import "TBWFlickrFeedPage.h"
 
 @interface TBWThumbsVM()
@@ -28,10 +26,14 @@
     return _data;
 }
 #pragma mark - Public
+- (NSString *)getFlickrPhotoIdAtIndexPath:(NSIndexPath *)indexPath{
+    return [self photoAtIndex:indexPath.row].uid;
+}
 - (void)setNumberOfItemsPerPage:(NSInteger)nItemsPerPage{
     _itemsPerPage = nItemsPerPage;
 }
 - (void)checkDataForIndexPath:(NSIndexPath *)indexPath{
+    //TODO: optimize to preload around one page ahead
     if((indexPath.row >= [self.page.page integerValue] * self.itemsPerPage) && !self.isLoadingData){
         [self retrieveDataForPage:[self.page.page integerValue] + 1 WithSuccess:nil AndFailure:nil];
     }
@@ -39,7 +41,7 @@
 #pragma mark - MBXAsyncViewModelProtocol
 - (void)retrieveDataForPage:(NSInteger)page WithSuccess:(void (^)(void))success AndFailure:(void (^)(NSError *))failure{
     self.isLoadingData = YES;
-    //TODO make the seach tag come through parameter and connect to a UITextfield search
+    //TODO make the search tag come through parameter and connect to a UITextfield search
     [TBWDataProvider getImagesWithTags:@"grass" forPage:page withItemsPerPage:self.itemsPerPage withSuccess:^(id result) {
         self.isLoadingData = NO;
         

@@ -13,4 +13,5 @@
 @protocol MBXServiceProtocol <NSObject>
 - (id)initWithParser:(id<MBXServiceParserProtocol>)parser AndConnector:(id<MBXServiceConnectorProtocol>)connector;
 - (void) getObjectsWithParams:(NSDictionary *)params success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
+- (void) getObjectWithParams:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 @end

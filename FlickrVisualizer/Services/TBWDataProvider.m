@@ -30,4 +30,20 @@
         }];
     } failure:failure];
 }
++ (void)getPhotoInfoWithId:(NSString *)photoId withSuccess:(void (^)(id))success failure:(void (^)(NSError *))failure{
+    MBXBaseService *service = [[MBXBaseService alloc] initWithParser:nil AndConnector:[TBWFlickrKitConnector new]];
+
+    [service getObjectWithParams:@{@"photo_id":photoId} success:^(id responseObject) {
+        
+        //TODO: put this in an NSOperation or GCD inside the parser utility to parse in background
+        MBXBaseParseParser *pageParser = [MBXBaseParseParser newParserWithModelClass:[TBWFlickrFeedPage class]];
+        [pageParser processWithData:[responseObject valueForKey:@"photos"] AndCompletion:^(id result) {
+            TBWFlickrFeedPage *page = result;
+            MBXBaseParseParser *photosParser = [MBXBaseParseParser newParserWithModelClass:[TBWFlickrPhoto class]];
+            [photosParser processDataArray:[responseObject valueForKeyPath:@"photos.photo"] WithCompletion:^(id result) {
+                success(@{@"page":page, @"photos":result});
+            }];
+        }];
+    } failure:failure];
+}
 @end

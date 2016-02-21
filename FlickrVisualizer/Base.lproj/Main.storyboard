@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Thumbs View Controller-->
@@ -48,10 +50,63 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="Jpv-AU-znz" id="iAB-Sv-RXS"/>
+                        <segue destination="fA7-Zk-cnd" kind="show" identifier="segue-detail" id="twl-Tm-wcm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="aOJ-SC-Bmg">
+            <objects>
+                <viewController id="fA7-Zk-cnd" customClass="TBWDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6zM-q5-kya"/>
+                        <viewControllerLayoutGuide type="bottom" id="C4m-5B-wtz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CFQ-eA-XjO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a1Y-ZX-xzU">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHt-eN-nfM">
+                                <rect key="frame" x="28" y="318" width="552" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7P-0k-lYf">
+                                <rect key="frame" x="28" y="347" width="552" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="r7P-0k-lYf" firstAttribute="top" secondItem="jHt-eN-nfM" secondAttribute="bottom" constant="8" id="3Cd-1e-xRD"/>
+                            <constraint firstAttribute="trailing" secondItem="r7P-0k-lYf" secondAttribute="trailing" constant="20" id="RLk-xT-p8r"/>
+                            <constraint firstItem="jHt-eN-nfM" firstAttribute="leading" secondItem="CFQ-eA-XjO" secondAttribute="leadingMargin" constant="8" id="cVQ-yV-RSE"/>
+                            <constraint firstItem="jHt-eN-nfM" firstAttribute="top" secondItem="a1Y-ZX-xzU" secondAttribute="bottom" constant="18" id="fVr-vM-5o8"/>
+                            <constraint firstItem="a1Y-ZX-xzU" firstAttribute="top" secondItem="CFQ-eA-XjO" secondAttribute="top" id="grl-zy-uVf"/>
+                            <constraint firstItem="r7P-0k-lYf" firstAttribute="leading" secondItem="jHt-eN-nfM" secondAttribute="leading" id="mSw-FF-NL6"/>
+                            <constraint firstItem="a1Y-ZX-xzU" firstAttribute="leading" secondItem="CFQ-eA-XjO" secondAttribute="leading" id="q3x-2H-FOy"/>
+                            <constraint firstAttribute="trailing" secondItem="a1Y-ZX-xzU" secondAttribute="trailing" id="qDx-EI-V45"/>
+                            <constraint firstItem="a1Y-ZX-xzU" firstAttribute="height" secondItem="CFQ-eA-XjO" secondAttribute="height" multiplier="0.5" id="uda-uC-Y8s"/>
+                            <constraint firstAttribute="trailing" secondItem="jHt-eN-nfM" secondAttribute="trailing" constant="20" id="zE9-xJ-GTx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imgView" destination="a1Y-ZX-xzU" id="kPs-Jk-sXw"/>
+                        <outlet property="lbDescription" destination="r7P-0k-lYf" id="j4G-FD-Zo6"/>
+                        <outlet property="lbTitle" destination="jHt-eN-nfM" id="q26-bS-DnO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mGZ-aI-bXP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1172" y="372"/>
         </scene>
     </scenes>
 </document>

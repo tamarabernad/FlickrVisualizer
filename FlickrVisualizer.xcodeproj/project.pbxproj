@@ -19,9 +19,6 @@
 		630463A51C77907E004DAF2B /* TBWDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 630463A41C77907E004DAF2B /* TBWDataProvider.m */; };
 		630463A61C77907E004DAF2B /* TBWDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 630463A41C77907E004DAF2B /* TBWDataProvider.m */; };
 		630463A71C77907E004DAF2B /* TBWDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 630463A41C77907E004DAF2B /* TBWDataProvider.m */; };
-		630463AA1C7790FC004DAF2B /* TBWFlickrService.m in Sources */ = {isa = PBXBuildFile; fileRef = 630463A91C7790FC004DAF2B /* TBWFlickrService.m */; };
-		630463AB1C7790FC004DAF2B /* TBWFlickrService.m in Sources */ = {isa = PBXBuildFile; fileRef = 630463A91C7790FC004DAF2B /* TBWFlickrService.m */; };
-		630463AC1C7790FC004DAF2B /* TBWFlickrService.m in Sources */ = {isa = PBXBuildFile; fileRef = 630463A91C7790FC004DAF2B /* TBWFlickrService.m */; };
 		630463AE1C7791C4004DAF2B /* FlickrApiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 630463AD1C7791C4004DAF2B /* FlickrApiTests.m */; };
 		63B3812B1C7842DB00A094BF /* TBWThumbsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3812A1C7842DB00A094BF /* TBWThumbsViewController.m */; };
 		63B3812C1C7842DB00A094BF /* TBWThumbsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3812A1C7842DB00A094BF /* TBWThumbsViewController.m */; };
@@ -50,6 +47,12 @@
 		63B381751C7854BF00A094BF /* TBWFlickrFeedPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B381741C7854BF00A094BF /* TBWFlickrFeedPage.m */; };
 		63B381761C7854BF00A094BF /* TBWFlickrFeedPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B381741C7854BF00A094BF /* TBWFlickrFeedPage.m */; };
 		63B381771C7854BF00A094BF /* TBWFlickrFeedPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B381741C7854BF00A094BF /* TBWFlickrFeedPage.m */; };
+		63B3817B1C7995BB00A094BF /* TBWDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3817A1C7995BB00A094BF /* TBWDetailViewController.m */; };
+		63B3817C1C7995BB00A094BF /* TBWDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3817A1C7995BB00A094BF /* TBWDetailViewController.m */; };
+		63B3817D1C7995BB00A094BF /* TBWDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3817A1C7995BB00A094BF /* TBWDetailViewController.m */; };
+		63B381801C79961600A094BF /* TBWDetailVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3817F1C79961600A094BF /* TBWDetailVM.m */; };
+		63B381811C79961600A094BF /* TBWDetailVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3817F1C79961600A094BF /* TBWDetailVM.m */; };
+		63B381821C79961600A094BF /* TBWDetailVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3817F1C79961600A094BF /* TBWDetailVM.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,8 +90,6 @@
 		630463961C778CD3004DAF2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		630463A31C77907E004DAF2B /* TBWDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBWDataProvider.h; sourceTree = "<group>"; };
 		630463A41C77907E004DAF2B /* TBWDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBWDataProvider.m; sourceTree = "<group>"; };
-		630463A81C7790FC004DAF2B /* TBWFlickrService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBWFlickrService.h; sourceTree = "<group>"; };
-		630463A91C7790FC004DAF2B /* TBWFlickrService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBWFlickrService.m; sourceTree = "<group>"; };
 		630463AD1C7791C4004DAF2B /* FlickrApiTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrApiTests.m; sourceTree = "<group>"; };
 		630463AF1C77939E004DAF2B /* FlickrVisualizer.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrVisualizer.pch; sourceTree = "<group>"; };
 		63B381291C7842DB00A094BF /* TBWThumbsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBWThumbsViewController.h; sourceTree = "<group>"; };
@@ -113,6 +114,10 @@
 		63B381691C78517700A094BF /* MBXBaseParseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBXBaseParseParser.m; sourceTree = "<group>"; };
 		63B381731C7854BF00A094BF /* TBWFlickrFeedPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBWFlickrFeedPage.h; sourceTree = "<group>"; };
 		63B381741C7854BF00A094BF /* TBWFlickrFeedPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBWFlickrFeedPage.m; sourceTree = "<group>"; };
+		63B381791C7995BB00A094BF /* TBWDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBWDetailViewController.h; sourceTree = "<group>"; };
+		63B3817A1C7995BB00A094BF /* TBWDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBWDetailViewController.m; sourceTree = "<group>"; };
+		63B3817E1C79961600A094BF /* TBWDetailVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBWDetailVM.h; sourceTree = "<group>"; };
+		63B3817F1C79961600A094BF /* TBWDetailVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBWDetailVM.m; sourceTree = "<group>"; };
 		8DEED9724C4C6EE7A0722752 /* libPods-FlickrVisualizerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlickrVisualizerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC343D603393A199B9C20AB7 /* Pods-FlickrVisualizerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrVisualizerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrVisualizerTests/Pods-FlickrVisualizerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CDEFEE61CD1EFA28C5C21182 /* Pods-FlickrVisualizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrVisualizer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrVisualizer/Pods-FlickrVisualizer.debug.xcconfig"; sourceTree = "<group>"; };
@@ -233,11 +238,8 @@
 		630463A21C77903A004DAF2B /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				63B381611C784FE700A094BF /* Parsers */,
 				630463A31C77907E004DAF2B /* TBWDataProvider.h */,
 				630463A41C77907E004DAF2B /* TBWDataProvider.m */,
-				630463A81C7790FC004DAF2B /* TBWFlickrService.h */,
-				630463A91C7790FC004DAF2B /* TBWFlickrService.m */,
 				63B381561C784D8700A094BF /* TBWFlickrKitConnector.h */,
 				63B381571C784D8700A094BF /* TBWFlickrKitConnector.m */,
 			);
@@ -249,6 +251,8 @@
 			children = (
 				63B381291C7842DB00A094BF /* TBWThumbsViewController.h */,
 				63B3812A1C7842DB00A094BF /* TBWThumbsViewController.m */,
+				63B381791C7995BB00A094BF /* TBWDetailViewController.h */,
+				63B3817A1C7995BB00A094BF /* TBWDetailViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -258,6 +262,8 @@
 			children = (
 				63B3812F1C7843B000A094BF /* TBWThumbsVM.h */,
 				63B381301C7843B000A094BF /* TBWThumbsVM.m */,
+				63B3817E1C79961600A094BF /* TBWDetailVM.h */,
+				63B3817F1C79961600A094BF /* TBWDetailVM.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -304,13 +310,6 @@
 				63B381741C7854BF00A094BF /* TBWFlickrFeedPage.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		63B381611C784FE700A094BF /* Parsers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Parsers;
 			sourceTree = "<group>";
 		};
 		63B381671C78517700A094BF /* Parsers */ = {
@@ -568,6 +567,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				630463741C778CD2004DAF2B /* AppDelegate.m in Sources */,
+				63B381801C79961600A094BF /* TBWDetailVM.m in Sources */,
 				63B381441C78486B00A094BF /* TBWThumbCell.m in Sources */,
 				63B381581C784D8700A094BF /* TBWFlickrKitConnector.m in Sources */,
 				63B3815E1C784EA000A094BF /* TBWFlickrPhoto.m in Sources */,
@@ -575,7 +575,7 @@
 				630463A51C77907E004DAF2B /* TBWDataProvider.m in Sources */,
 				63B3812B1C7842DB00A094BF /* TBWThumbsViewController.m in Sources */,
 				63B3816D1C78517700A094BF /* MBXBaseParseParser.m in Sources */,
-				630463AA1C7790FC004DAF2B /* TBWFlickrService.m in Sources */,
+				63B3817B1C7995BB00A094BF /* TBWDetailViewController.m in Sources */,
 				63B381531C784C3800A094BF /* MBXBaseService.m in Sources */,
 				630463711C778CD2004DAF2B /* main.m in Sources */,
 				63B381751C7854BF00A094BF /* TBWFlickrFeedPage.m in Sources */,
@@ -587,14 +587,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				630463A61C77907E004DAF2B /* TBWDataProvider.m in Sources */,
+				63B381811C79961600A094BF /* TBWDetailVM.m in Sources */,
 				63B381451C78486B00A094BF /* TBWThumbCell.m in Sources */,
 				63B381591C784D8700A094BF /* TBWFlickrKitConnector.m in Sources */,
 				63B3815F1C784EA000A094BF /* TBWFlickrPhoto.m in Sources */,
 				63B381321C7843B000A094BF /* TBWThumbsVM.m in Sources */,
 				6304638A1C778CD3004DAF2B /* FlickrVisualizerTests.m in Sources */,
-				630463AB1C7790FC004DAF2B /* TBWFlickrService.m in Sources */,
 				63B3816E1C78517700A094BF /* MBXBaseParseParser.m in Sources */,
 				63B3812C1C7842DB00A094BF /* TBWThumbsViewController.m in Sources */,
+				63B3817C1C7995BB00A094BF /* TBWDetailViewController.m in Sources */,
 				63B381541C784C3800A094BF /* MBXBaseService.m in Sources */,
 				630463AE1C7791C4004DAF2B /* FlickrApiTests.m in Sources */,
 				63B381761C7854BF00A094BF /* TBWFlickrFeedPage.m in Sources */,
@@ -608,9 +609,10 @@
 				63B381331C7843B000A094BF /* TBWThumbsVM.m in Sources */,
 				63B3816F1C78517700A094BF /* MBXBaseParseParser.m in Sources */,
 				63B381551C784C3800A094BF /* MBXBaseService.m in Sources */,
+				63B3817D1C7995BB00A094BF /* TBWDetailViewController.m in Sources */,
 				630463A71C77907E004DAF2B /* TBWDataProvider.m in Sources */,
 				630463951C778CD3004DAF2B /* FlickrVisualizerUITests.m in Sources */,
-				630463AC1C7790FC004DAF2B /* TBWFlickrService.m in Sources */,
+				63B381821C79961600A094BF /* TBWDetailVM.m in Sources */,
 				63B3815A1C784D8700A094BF /* TBWFlickrKitConnector.m in Sources */,
 				63B381461C78486B00A094BF /* TBWThumbCell.m in Sources */,
 				63B3812D1C7842DB00A094BF /* TBWThumbsViewController.m in Sources */,

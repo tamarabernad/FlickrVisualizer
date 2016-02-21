@@ -13,4 +13,6 @@
                   forPage:(NSInteger) page
          withItemsPerPage:(NSInteger)itemsPerPage
               withSuccess:(void (^)(id result))success failure:(void (^)(NSError *error))failure;
+
++ (void)getPhotoInfoWithId:(NSString *)photoId withSuccess:(void (^)(id result))success failure:(void (^)(NSError *error))failure;
 @end

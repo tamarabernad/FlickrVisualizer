@@ -15,5 +15,9 @@
 @property(nonatomic, strong) NSString *secret;
 @property(nonatomic, strong) NSNumber *farm;
 
+//photo info
+@property(nonatomic, strong) NSString *description;
+
 - (NSString *)imageUrlSmall;
+- (NSString *)imageUrlLarge;
 @end

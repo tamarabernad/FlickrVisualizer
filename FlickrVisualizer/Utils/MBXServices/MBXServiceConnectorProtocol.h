@@ -10,4 +10,5 @@
 
 @protocol MBXServiceConnectorProtocol <NSObject>
 - (void) getObjectsWithParams:(NSDictionary *)params success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
+- (void) getObjectWithParams:(NSDictionary *)params success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
 @end

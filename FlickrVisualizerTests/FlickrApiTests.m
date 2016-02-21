@@ -7,7 +7,6 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "TBWFlickrService.h"
 #import "FlickrKit.h"
 
 @interface FlickrApiTests : XCTestCase
@@ -29,18 +28,6 @@
 - (void)testResponseNotNil {
     XCTestExpectation *expectation =
     [self expectationWithDescription:@"Expecting response from FlickrService"];
-    
-    TBWFlickrService *sut = [TBWFlickrService new];
-    
-    [sut getObjectsWithParams:@{} Success:^(id results) {
-        
-        XCTAssert(results != nil);
-        [expectation fulfill];
-        
-    } failure:^(NSError *failure) {
-        XCTFail();
-        [expectation fulfill];
-    }];
     
     [self waitForExpectationsWithTimeout:5.0 handler:^(NSError *error) {
         if (error) {

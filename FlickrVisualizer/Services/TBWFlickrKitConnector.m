@@ -21,4 +21,15 @@
         });
     }];
 }
+- (void)getObjectWithParams:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure{
+    [[FlickrKit sharedFlickrKit] call:@"flickr.photos.getInfo" args:params maxCacheAge:FKDUMaxAgeOneHour completion:^(NSDictionary *response, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (response) {
+                success(response);
+            } else {
+                failure(error);
+            }
+        });
+    }];
+}
 @end

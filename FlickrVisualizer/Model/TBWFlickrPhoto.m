@@ -11,6 +11,11 @@
 
 @implementation TBWFlickrPhoto
 - (NSString *)imageUrlSmall{
+    //TODO: make image selection dependant on screensize
     return [[[FlickrKit sharedFlickrKit] photoURLForSize:FKPhotoSizeSmallSquare75 photoID:self.uid server:self.server secret:self.secret farm:[self.farm stringValue]] absoluteString];
+}
+- (NSString *)imageUrlLarge{
+    //TODO: make image selection dependant on screensize
+    return [[[FlickrKit sharedFlickrKit] photoURLForSize:FKPhotoSizeLarge1024 photoID:self.uid server:self.server secret:self.secret farm:[self.farm stringValue]] absoluteString];    
 }
 @end
