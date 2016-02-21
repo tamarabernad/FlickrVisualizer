@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol TBWThumbsHeaderViewDelegate;
 @interface TBWThumbsHeaderView : UICollectionReusableView
+@property (nonatomic, weak)id<TBWThumbsHeaderViewDelegate> delegate;
+@end
 
+@protocol TBWThumbsHeaderViewDelegate <NSObject>
+- (void)TBWThumbsHeaderView:(TBWThumbsHeaderView *)view didUpdateTags:(NSArray *)tags;
 @end

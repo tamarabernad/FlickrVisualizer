@@ -13,7 +13,7 @@
 #import "TBWThumbsHeaderView.h"
 
 #define CELL_DIM 100.0
-@interface TBWThumbsViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, TBWThumbsVMDelegate>
+@interface TBWThumbsViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, TBWThumbsVMDelegate, TBWThumbsHeaderViewDelegate>
 {
     UIDynamicAnimator* _animator;
     UIGravityBehavior* _gravity;
@@ -90,6 +90,7 @@
     
     if (kind == UICollectionElementKindSectionHeader) {
         TBWThumbsHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header-view" forIndexPath:indexPath];
+        headerView.delegate = self;
         reusableview = headerView;
     }
     return reusableview;
@@ -119,5 +120,10 @@
 #pragma mark - TBWThumbsVMDelegate
 - (void)TBWThumbsVMDidLoadData:(TBWThumbsVM *)viewModel{
     [self.collectionView reloadData];
+}
+
+#pragma mark - TBWThumbsHeaderViewDelegate
+- (void)TBWThumbsHeaderView:(TBWThumbsHeaderView *)view didUpdateTags:(NSArray *)tags{
+    [self.viewModel setTags:tags];
 }
 @end

@@ -20,6 +20,15 @@
 		630463A61C77907E004DAF2B /* TBWDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 630463A41C77907E004DAF2B /* TBWDataProvider.m */; };
 		630463A71C77907E004DAF2B /* TBWDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 630463A41C77907E004DAF2B /* TBWDataProvider.m */; };
 		630463AE1C7791C4004DAF2B /* FlickrApiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 630463AD1C7791C4004DAF2B /* FlickrApiTests.m */; };
+		635267BE1C79B18500134247 /* TBWTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 635267BC1C79B18500134247 /* TBWTagCell.m */; };
+		635267BF1C79B18500134247 /* TBWTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 635267BC1C79B18500134247 /* TBWTagCell.m */; };
+		635267C01C79B18500134247 /* TBWTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 635267BC1C79B18500134247 /* TBWTagCell.m */; };
+		635267C11C79B18500134247 /* TBWTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 635267BD1C79B18500134247 /* TBWTagCell.xib */; };
+		635267C21C79B18500134247 /* TBWTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 635267BD1C79B18500134247 /* TBWTagCell.xib */; };
+		635267C31C79B18500134247 /* TBWTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 635267BD1C79B18500134247 /* TBWTagCell.xib */; };
+		635267C61C79B2CD00134247 /* TBWTagsVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 635267C51C79B2CD00134247 /* TBWTagsVM.m */; };
+		635267C71C79B2CD00134247 /* TBWTagsVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 635267C51C79B2CD00134247 /* TBWTagsVM.m */; };
+		635267C81C79B2CD00134247 /* TBWTagsVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 635267C51C79B2CD00134247 /* TBWTagsVM.m */; };
 		63B3812B1C7842DB00A094BF /* TBWThumbsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3812A1C7842DB00A094BF /* TBWThumbsViewController.m */; };
 		63B3812C1C7842DB00A094BF /* TBWThumbsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3812A1C7842DB00A094BF /* TBWThumbsViewController.m */; };
 		63B3812D1C7842DB00A094BF /* TBWThumbsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3812A1C7842DB00A094BF /* TBWThumbsViewController.m */; };
@@ -98,6 +107,11 @@
 		630463A41C77907E004DAF2B /* TBWDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBWDataProvider.m; sourceTree = "<group>"; };
 		630463AD1C7791C4004DAF2B /* FlickrApiTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrApiTests.m; sourceTree = "<group>"; };
 		630463AF1C77939E004DAF2B /* FlickrVisualizer.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrVisualizer.pch; sourceTree = "<group>"; };
+		635267BB1C79B18500134247 /* TBWTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBWTagCell.h; sourceTree = "<group>"; };
+		635267BC1C79B18500134247 /* TBWTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBWTagCell.m; sourceTree = "<group>"; };
+		635267BD1C79B18500134247 /* TBWTagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBWTagCell.xib; sourceTree = "<group>"; };
+		635267C41C79B2CD00134247 /* TBWTagsVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBWTagsVM.h; sourceTree = "<group>"; };
+		635267C51C79B2CD00134247 /* TBWTagsVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBWTagsVM.m; sourceTree = "<group>"; };
 		63B381291C7842DB00A094BF /* TBWThumbsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBWThumbsViewController.h; sourceTree = "<group>"; };
 		63B3812A1C7842DB00A094BF /* TBWThumbsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBWThumbsViewController.m; sourceTree = "<group>"; };
 		63B3812F1C7843B000A094BF /* TBWThumbsVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBWThumbsVM.h; sourceTree = "<group>"; };
@@ -274,6 +288,8 @@
 				63B381301C7843B000A094BF /* TBWThumbsVM.m */,
 				63B3817E1C79961600A094BF /* TBWDetailVM.h */,
 				63B3817F1C79961600A094BF /* TBWDetailVM.m */,
+				635267C41C79B2CD00134247 /* TBWTagsVM.h */,
+				635267C51C79B2CD00134247 /* TBWTagsVM.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -296,6 +312,9 @@
 				63B381431C78486B00A094BF /* TBWThumbCell.xib */,
 				63B381881C79AD9300A094BF /* TBWThumbsHeaderView.h */,
 				63B381891C79AD9300A094BF /* TBWThumbsHeaderView.m */,
+				635267BB1C79B18500134247 /* TBWTagCell.h */,
+				635267BC1C79B18500134247 /* TBWTagCell.m */,
+				635267BD1C79B18500134247 /* TBWTagCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -460,6 +479,7 @@
 				6304637F1C778CD3004DAF2B /* LaunchScreen.storyboard in Resources */,
 				6304637C1C778CD3004DAF2B /* Assets.xcassets in Resources */,
 				63B381471C78486B00A094BF /* TBWThumbCell.xib in Resources */,
+				635267C11C79B18500134247 /* TBWTagCell.xib in Resources */,
 				6304637A1C778CD2004DAF2B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,6 +488,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				635267C21C79B18500134247 /* TBWTagCell.xib in Resources */,
 				63B381481C78486B00A094BF /* TBWThumbCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,6 +497,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				635267C31C79B18500134247 /* TBWTagCell.xib in Resources */,
 				63B381491C78486B00A094BF /* TBWThumbCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -580,6 +602,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				635267BE1C79B18500134247 /* TBWTagCell.m in Sources */,
 				630463741C778CD2004DAF2B /* AppDelegate.m in Sources */,
 				63B381801C79961600A094BF /* TBWDetailVM.m in Sources */,
 				63B381441C78486B00A094BF /* TBWThumbCell.m in Sources */,
@@ -587,6 +610,7 @@
 				63B3815E1C784EA000A094BF /* TBWFlickrPhoto.m in Sources */,
 				63B381311C7843B000A094BF /* TBWThumbsVM.m in Sources */,
 				630463A51C77907E004DAF2B /* TBWDataProvider.m in Sources */,
+				635267C61C79B2CD00134247 /* TBWTagsVM.m in Sources */,
 				63B381851C799F7400A094BF /* MBXMappedParser.m in Sources */,
 				63B3812B1C7842DB00A094BF /* TBWThumbsViewController.m in Sources */,
 				63B3816D1C78517700A094BF /* MBXBaseParseParser.m in Sources */,
@@ -602,6 +626,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				635267BF1C79B18500134247 /* TBWTagCell.m in Sources */,
 				630463A61C77907E004DAF2B /* TBWDataProvider.m in Sources */,
 				63B381811C79961600A094BF /* TBWDetailVM.m in Sources */,
 				63B381451C78486B00A094BF /* TBWThumbCell.m in Sources */,
@@ -609,6 +634,7 @@
 				63B3815F1C784EA000A094BF /* TBWFlickrPhoto.m in Sources */,
 				63B381321C7843B000A094BF /* TBWThumbsVM.m in Sources */,
 				6304638A1C778CD3004DAF2B /* FlickrVisualizerTests.m in Sources */,
+				635267C71C79B2CD00134247 /* TBWTagsVM.m in Sources */,
 				63B381861C799F7400A094BF /* MBXMappedParser.m in Sources */,
 				63B3816E1C78517700A094BF /* MBXBaseParseParser.m in Sources */,
 				63B3812C1C7842DB00A094BF /* TBWThumbsViewController.m in Sources */,
@@ -629,10 +655,12 @@
 				63B3816F1C78517700A094BF /* MBXBaseParseParser.m in Sources */,
 				63B381551C784C3800A094BF /* MBXBaseService.m in Sources */,
 				63B3817D1C7995BB00A094BF /* TBWDetailViewController.m in Sources */,
+				635267C81C79B2CD00134247 /* TBWTagsVM.m in Sources */,
 				630463A71C77907E004DAF2B /* TBWDataProvider.m in Sources */,
 				630463951C778CD3004DAF2B /* FlickrVisualizerUITests.m in Sources */,
 				63B381821C79961600A094BF /* TBWDetailVM.m in Sources */,
 				63B381871C799F7400A094BF /* MBXMappedParser.m in Sources */,
+				635267C01C79B18500134247 /* TBWTagCell.m in Sources */,
 				63B3815A1C784D8700A094BF /* TBWFlickrKitConnector.m in Sources */,
 				63B381461C78486B00A094BF /* TBWThumbCell.m in Sources */,
 				63B3812D1C7842DB00A094BF /* TBWThumbsViewController.m in Sources */,

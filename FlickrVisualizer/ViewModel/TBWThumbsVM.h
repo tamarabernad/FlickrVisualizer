@@ -18,8 +18,10 @@
 - (void)setNumberOfItemsPerPage:(NSInteger)nItemsPerPage;
 - (void)checkDataForIndexPath:(NSIndexPath *)indexPath;
 - (NSString *)getFlickrPhotoIdAtIndexPath:(NSIndexPath *)indexPath;
+- (void)setTags:(NSArray *)tags;
 @end
 
 @protocol TBWThumbsVMDelegate <NSObject>
 - (void)TBWThumbsVMDidLoadData:(TBWThumbsVM *)viewModel;
+- (void)TBWThumbsVMDidFailLoadData:(TBWThumbsVM *)viewModel error:(NSError *)errors;
 @end

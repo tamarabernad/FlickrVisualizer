@@ -16,7 +16,7 @@
             if (response) {
                 success(response);
             } else {
-                failure(error);
+                if(failure)failure(error);
             }
         });
     }];
@@ -27,7 +27,7 @@
             if (response) {
                 success(response);
             } else {
-                failure(error);
+                if(failure)failure(error);
             }
         });
     }];

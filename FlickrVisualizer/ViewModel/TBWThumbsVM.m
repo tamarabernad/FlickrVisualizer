@@ -1,4 +1,4 @@
-//
+    //
 //  TBWThumbsVM.m
 //  FlickrVisualizer
 //
@@ -15,6 +15,7 @@
 @property(nonatomic) NSInteger itemsPerPage;
 @property(nonatomic) BOOL isLoadingData;
 @property (nonatomic, strong) TBWFlickrFeedPage *page;
+@property (nonatomic, strong)NSString *searchTags;
 @end
 @implementation TBWThumbsVM
 
@@ -25,7 +26,18 @@
     }
     return _data;
 }
+- (NSString *)searchTags{
+    if(!_searchTags || [_searchTags isEqualToString:@""]){
+        _searchTags = @"Philips";
+    }
+    return _searchTags;
+}
 #pragma mark - Public
+- (void)setTags:(NSArray *)tags{
+    [self reset];
+    self.searchTags = [tags componentsJoinedByString:@","];
+    [self retrieveDataForPage:0 WithSuccess:nil AndFailure:nil];
+}
 - (NSString *)getFlickrPhotoIdAtIndexPath:(NSIndexPath *)indexPath{
     return [self photoAtIndex:indexPath.row].uid;
 }
@@ -42,7 +54,7 @@
 - (void)retrieveDataForPage:(NSInteger)page WithSuccess:(void (^)(void))success AndFailure:(void (^)(NSError *))failure{
     self.isLoadingData = YES;
     //TODO make the search tag come through parameter and connect to a UITextfield search
-    [TBWDataProvider getImagesWithTags:@"grass" forPage:page withItemsPerPage:[self nItemsToRequest] withSuccess:^(id result) {
+    [TBWDataProvider getImagesWithTags:self.searchTags forPage:page withItemsPerPage:[self nItemsToRequest] withSuccess:^(id result) {
         self.isLoadingData = NO;
         
         NSMutableArray *arr = [NSMutableArray arrayWithArray:[result valueForKey:@"photos"]];
@@ -71,5 +83,8 @@
 - (TBWFlickrPhoto *)photoAtIndex:(NSInteger)index{
     //TODO: scroll is not infinite yet, make it infinite with an circular array checking index on [self.page totalItems]
     return self.data.count - 1 < index ? nil : [self.data objectAtIndex:index];
+}
+- (void)reset{
+    self.data = nil;
 }
 @end
