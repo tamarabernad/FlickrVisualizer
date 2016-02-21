@@ -64,7 +64,10 @@
         self.page = [result valueForKey:@"page"];
         [self.delegate TBWThumbsVMDidLoadData:self];
         if(success)success();
-    } failure:failure];
+    } failure:^(NSError *error) {
+        self.data = @[];
+       [self.delegate TBWThumbsVMDidLoadData:self];
+    }];
 }
 
 #pragma mark - MBXListViewModelProtocol

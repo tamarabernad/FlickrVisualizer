@@ -23,7 +23,9 @@
         NSMutableArray *array = [NSMutableArray new];
         NSInteger __block nCompleted = 0;
         if (data.count == 0) {
+            dispatch_async(dispatch_get_main_queue(), ^(void){
             if(completion)completion(@[]);
+            });
         }
         for (NSObject *object in data) {
             [self processWithData:object AndCompletion:^(id result) {

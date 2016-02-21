@@ -16,6 +16,7 @@
 @interface TBWThumbsViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, TBWThumbsVMDelegate, TBWThumbsHeaderViewDelegate, TBWDetailViewControllerDelegate>
 
 @property (nonatomic, strong) TBWThumbsVM *viewModel;
+@property (weak, nonatomic) IBOutlet UILabel *lbEmpty;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) UIDynamicAnimator* animator;
 @end
@@ -47,6 +48,7 @@
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     
+    self.lbEmpty.hidden = YES;
 
     //TODO: control rotation and recalculate items per page
     //TODO: make cell dimention dynamic to have always the same distance between cells
@@ -56,9 +58,7 @@
     
 }
 - (void)viewDidAppear:(BOOL)animated{
-    [self.viewModel retrieveDataForPage:0 WithSuccess:nil AndFailure:^(NSError *error) {
-       //TODO: show error handling
-    }];
+    [self.viewModel retrieveDataForPage:0 WithSuccess:nil AndFailure:nil];
 }
 
 #pragma mark - Navigation
@@ -72,6 +72,7 @@
     return [self.viewModel numberOfSections];
 }
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    self.lbEmpty.hidden = [self.viewModel numberOfItemsInSection:section] > 0;
     return [self.viewModel numberOfItemsInSection:section];
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
