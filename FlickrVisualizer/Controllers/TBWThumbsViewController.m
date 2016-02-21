@@ -9,10 +9,13 @@
 #import "TBWThumbsViewController.h"
 #import "TBWThumbsVM.h"
 #import "TBWThumbCell.h"
-@interface TBWThumbsViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
+
+#define CELL_DIM 50.0
+@interface TBWThumbsViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, TBWThumbsVMDelegate>
 
 @property (nonatomic, strong) TBWThumbsVM *viewModel;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (nonatomic) NSInteger itemsPerCol;
 
 @end
 
@@ -22,6 +25,7 @@
 - (TBWThumbsVM *)viewModel{
     if(!_viewModel){
         _viewModel = [TBWThumbsVM new];
+        _viewModel.delegate = self;
     }
     return _viewModel;
 }
@@ -30,17 +34,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //TODO move the reuse identifier to the cell with a protocol ReusableCellProtocol and a class method returning the identifier
     UINib *cellNib = [UINib nibWithNibName:NSStringFromClass([TBWThumbCell class]) bundle:[NSBundle mainBundle]];
     [self.collectionView registerNib:cellNib forCellWithReuseIdentifier:NSStringFromClass([TBWThumbCell class])];
 
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
-
+    
+    NSInteger itemsPerRow = floor(self.view.bounds.size.width / CELL_DIM);
+    self.itemsPerCol = floor(self.view.bounds.size.height / CELL_DIM);
+    [self.viewModel setNumberOfItemsPerPage:self.itemsPerCol*itemsPerRow];
+    
 }
 - (void)viewDidAppear:(BOOL)animated{
-    [self.viewModel retrieveDataWithSuccess:^{
-        [self.collectionView reloadData];
-    } AndFailure:^(NSError *error) {
+    [self.viewModel retrieveDataForPage:0 WithSuccess:nil AndFailure:^(NSError *error) {
        //TODO: show failure alert
     }];
 }
@@ -54,8 +61,17 @@
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     TBWThumbCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([TBWThumbCell class]) forIndexPath:indexPath];
+    [self.viewModel checkDataForIndexPath:indexPath];
     [cell setImageUrl:[self.viewModel imageUrlForIndexPath:indexPath]];
     return cell;
 }
-
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout*)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    return CGSizeMake(CELL_DIM, CELL_DIM);
+}
+#pragma mark - TBWThumbsVMDelegate
+- (void)TBWThumbsVMDidLoadData:(TBWThumbsVM *)viewModel{
+    [self.collectionView reloadData];
+}
 @end
