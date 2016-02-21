@@ -107,11 +107,26 @@
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="957-tB-KMX" customClass="MBXRoundedIconButton">
+                                <rect key="frame" x="520" y="520" width="60" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Kjv-WT-Mxn"/>
+                                    <constraint firstAttribute="height" constant="60" id="RjR-FQ-1g9"/>
+                                </constraints>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="ic-break"/>
+                                <connections>
+                                    <action selector="onBreakitClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zeb-ym-Myl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="957-tB-KMX" secondAttribute="trailing" constant="20" id="800-eh-wg0"/>
                             <constraint firstAttribute="trailing" secondItem="Jpv-AU-znz" secondAttribute="trailing" id="9nY-y1-mbU"/>
                             <constraint firstItem="Jpv-AU-znz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SI2-Kh-SeY"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="957-tB-KMX" secondAttribute="bottom" constant="20" id="XYb-pO-Cv4"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Jpv-AU-znz" secondAttribute="bottom" id="sM6-P8-Lkd"/>
                             <constraint firstItem="Jpv-AU-znz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="yyL-XR-kui"/>
                         </constraints>
@@ -210,6 +225,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic-break" width="31" height="42"/>
         <image name="ic-close" width="32" height="32"/>
         <image name="ic-search" width="31" height="31"/>
     </resources>

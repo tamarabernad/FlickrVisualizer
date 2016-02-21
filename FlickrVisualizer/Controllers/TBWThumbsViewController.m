@@ -14,20 +14,18 @@
 
 #define CELL_DIM 100.0
 @interface TBWThumbsViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, TBWThumbsVMDelegate, TBWThumbsHeaderViewDelegate, TBWDetailViewControllerDelegate>
-{
-    UIDynamicAnimator* _animator;
-    UIGravityBehavior* _gravity;
-    UIGravityBehavior* _gravity2;
-    UICollisionBehavior* _collision;
-    UIPushBehavior *pushBehavior;
-//    UIFieldBehavior *f;
-}
+
 @property (nonatomic, strong) TBWThumbsVM *viewModel;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-
+@property (nonatomic, strong) UIDynamicAnimator* animator;
 @end
 
 @implementation TBWThumbsViewController
+
+#pragma mark - actions
+- (IBAction)onBreakitClick:(id)sender {
+    [self breakItAnimation];
+}
 
 #pragma mark - Lazy getters
 - (TBWThumbsVM *)viewModel{
@@ -102,26 +100,6 @@
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    UICollectionViewCell *clickedCell = [self.collectionView cellForItemAtIndexPath:indexPath];
-    [self.collectionView bringSubviewToFront:clickedCell];
-    NSArray *cells = [[self.collectionView visibleCells] filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self != %@",clickedCell]];
-    
-//    _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
-//        UIFieldBehavior *f;
-//    f  = [UIFieldBehavior radialGravityFieldWithPosition:clickedCell.frame.origin];
-//    f.region = [[UIRegion alloc] initWithRadius:300.0];
-//    f.strength = -30;
-//    f.falloff = 1.0;
-//    f.minimumRadius = 600.0;
-//    for (UICollectionViewCell *c in cells) {
-//        [f addItem:c];
-//    }
-//    [_animator addBehavior:f];
-    
-    [UIView animateWithDuration:1 animations:^{
-        clickedCell.transform = CGAffineTransformScale(clickedCell.transform, 4, 4);
-    }];
-
     [self performSelector:@selector(showDetailWithIndexPath:) withObject:indexPath afterDelay:1];
 
 }
@@ -142,5 +120,39 @@
 - (void)TBWDetailViewControllerDismiss:(TBWDetailViewController *)controller{
     [controller dismissViewControllerAnimated:YES completion:nil];
     [self.collectionView reloadData];
+}
+
+#pragma mark - helpers
+- (void) breakItAnimation{
+    self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+    [self applyFieldForce];
+    [self performSelector:@selector(applyGravity) withObject:nil afterDelay:2];
+}
+- (void)applyGravity{
+    NSArray *cells = [self.collectionView visibleCells];
+    UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:cells];
+    [self.animator addBehavior:gravity];
+    UICollisionBehavior *collision = [[UICollisionBehavior alloc]
+                                  initWithItems:cells];
+    [collision setTranslatesReferenceBoundsIntoBoundary:YES];
+    [self.animator addBehavior:collision];
+
+    UIDynamicItemBehavior* itemBehaviour = [[UIDynamicItemBehavior alloc] initWithItems:cells];
+    itemBehaviour.elasticity = 0.95;
+    [self.animator addBehavior:itemBehaviour];
+
+}
+- (void)applyFieldForce{
+    NSArray *cells = [self.collectionView visibleCells];
+    UIFieldBehavior *fieldBehavior;
+    fieldBehavior  = [UIFieldBehavior radialGravityFieldWithPosition:self.view.center];
+    fieldBehavior.region = [[UIRegion alloc] initWithRadius:300.0];
+    fieldBehavior.strength = 1.5;
+    fieldBehavior.falloff = 4.0;
+    fieldBehavior.minimumRadius = 50.0;
+    for (UICollectionViewCell *c in cells) {
+        [fieldBehavior addItem:c];
+    }
+    [self.animator addBehavior:fieldBehavior];
 }
 @end

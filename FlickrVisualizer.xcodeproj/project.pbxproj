@@ -32,6 +32,9 @@
 		635267CB1C7A309B00134247 /* BebasNeue.otf in Resources */ = {isa = PBXBuildFile; fileRef = 635267CA1C7A309B00134247 /* BebasNeue.otf */; };
 		635267CC1C7A309C00134247 /* BebasNeue.otf in Resources */ = {isa = PBXBuildFile; fileRef = 635267CA1C7A309B00134247 /* BebasNeue.otf */; };
 		635267CD1C7A309C00134247 /* BebasNeue.otf in Resources */ = {isa = PBXBuildFile; fileRef = 635267CA1C7A309B00134247 /* BebasNeue.otf */; };
+		635267D01C7A374500134247 /* MBXRoundedIconButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 635267CF1C7A374500134247 /* MBXRoundedIconButton.m */; };
+		635267D11C7A374500134247 /* MBXRoundedIconButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 635267CF1C7A374500134247 /* MBXRoundedIconButton.m */; };
+		635267D21C7A374500134247 /* MBXRoundedIconButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 635267CF1C7A374500134247 /* MBXRoundedIconButton.m */; };
 		63B3812B1C7842DB00A094BF /* TBWThumbsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3812A1C7842DB00A094BF /* TBWThumbsViewController.m */; };
 		63B3812C1C7842DB00A094BF /* TBWThumbsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3812A1C7842DB00A094BF /* TBWThumbsViewController.m */; };
 		63B3812D1C7842DB00A094BF /* TBWThumbsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B3812A1C7842DB00A094BF /* TBWThumbsViewController.m */; };
@@ -116,6 +119,8 @@
 		635267C41C79B2CD00134247 /* TBWTagsVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBWTagsVM.h; sourceTree = "<group>"; };
 		635267C51C79B2CD00134247 /* TBWTagsVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBWTagsVM.m; sourceTree = "<group>"; };
 		635267CA1C7A309B00134247 /* BebasNeue.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BebasNeue.otf; sourceTree = "<group>"; };
+		635267CE1C7A374500134247 /* MBXRoundedIconButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBXRoundedIconButton.h; sourceTree = "<group>"; };
+		635267CF1C7A374500134247 /* MBXRoundedIconButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBXRoundedIconButton.m; sourceTree = "<group>"; };
 		63B381291C7842DB00A094BF /* TBWThumbsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBWThumbsViewController.h; sourceTree = "<group>"; };
 		63B3812A1C7842DB00A094BF /* TBWThumbsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBWThumbsViewController.m; sourceTree = "<group>"; };
 		63B3812F1C7843B000A094BF /* TBWThumbsVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBWThumbsVM.h; sourceTree = "<group>"; };
@@ -313,6 +318,8 @@
 				63B3814C1C784C3700A094BF /* MBXServices */,
 				63B381351C78447500A094BF /* MBXListViewModelProtocol.h */,
 				63B381361C78454300A094BF /* MBXAsyncViewModelProtocol.h */,
+				635267CE1C7A374500134247 /* MBXRoundedIconButton.h */,
+				635267CF1C7A374500134247 /* MBXRoundedIconButton.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -634,6 +641,7 @@
 				63B381531C784C3800A094BF /* MBXBaseService.m in Sources */,
 				630463711C778CD2004DAF2B /* main.m in Sources */,
 				63B3818A1C79AD9300A094BF /* TBWThumbsHeaderView.m in Sources */,
+				635267D01C7A374500134247 /* MBXRoundedIconButton.m in Sources */,
 				63B381751C7854BF00A094BF /* TBWFlickrFeedPage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -658,6 +666,7 @@
 				63B381541C784C3800A094BF /* MBXBaseService.m in Sources */,
 				630463AE1C7791C4004DAF2B /* FlickrApiTests.m in Sources */,
 				63B3818B1C79AD9300A094BF /* TBWThumbsHeaderView.m in Sources */,
+				635267D11C7A374500134247 /* MBXRoundedIconButton.m in Sources */,
 				63B381761C7854BF00A094BF /* TBWFlickrFeedPage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -670,6 +679,7 @@
 				63B381331C7843B000A094BF /* TBWThumbsVM.m in Sources */,
 				63B3816F1C78517700A094BF /* MBXBaseParseParser.m in Sources */,
 				63B381551C784C3800A094BF /* MBXBaseService.m in Sources */,
+				635267D21C7A374500134247 /* MBXRoundedIconButton.m in Sources */,
 				63B3817D1C7995BB00A094BF /* TBWDetailViewController.m in Sources */,
 				635267C81C79B2CD00134247 /* TBWTagsVM.m in Sources */,
 				630463A71C77907E004DAF2B /* TBWDataProvider.m in Sources */,

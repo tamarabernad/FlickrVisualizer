@@ -23,5 +23,4 @@
 
 @protocol TBWThumbsVMDelegate <NSObject>
 - (void)TBWThumbsVMDidLoadData:(TBWThumbsVM *)viewModel;
-- (void)TBWThumbsVMDidFailLoadData:(TBWThumbsVM *)viewModel error:(NSError *)errors;
 @end
