@@ -15,9 +15,11 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B8c-X9-c7n">
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <color key="backgroundColor" red="0.8627451062" green="0.8627451062" blue="0.89411765340000005" alpha="1" colorSpace="calibratedRGB"/>
                     </imageView>
                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ZDW-6t-qNy">
                         <rect key="frame" x="15" y="15" width="20" height="20"/>
+                        <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </activityIndicatorView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

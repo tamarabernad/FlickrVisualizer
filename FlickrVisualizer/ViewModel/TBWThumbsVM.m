@@ -28,7 +28,7 @@
 }
 - (NSString *)searchTags{
     if(!_searchTags || [_searchTags isEqualToString:@""]){
-        _searchTags = @"Philips";
+        _searchTags = @"ocean";
     }
     return _searchTags;
 }
