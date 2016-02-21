@@ -34,6 +34,4 @@
         self.imgView.image = nil;
     }];
 }
-
-
 @end

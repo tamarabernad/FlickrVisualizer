@@ -25,10 +25,12 @@
 - (void)setPhotoId:(NSString *)photoId{
     [self.viewModel setPhotoId:photoId];
 }
+
 #pragma mark - actions
 - (IBAction)onCloseClick:(id)sender {
     [self.delegate TBWDetailViewControllerDismiss:self];
 }
+
 #pragma mark - Lazy getters
 - (TBWDetailVM *)viewModel{
     if(!_viewModel){
@@ -36,6 +38,7 @@
     }
     return  _viewModel;
 }
+
 #pragma mark - Life cycle
 - (void)viewWillAppear:(BOOL)animated{
     self.lbTitle.text = @"";

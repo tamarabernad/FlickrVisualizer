@@ -23,7 +23,6 @@
 }
 
 - (void)styleAppearance{
-    //NAVIGATION
     NSDictionary *attributesTitle = [NSDictionary dictionaryWithObjectsAndKeys:
                                      [UIColor whiteColor], NSForegroundColorAttributeName,
                                      [UIFont fontWithName:@"BebasNeue" size:20],NSFontAttributeName,

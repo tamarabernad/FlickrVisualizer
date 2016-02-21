@@ -31,6 +31,7 @@
     }
     return _viewModel;
 }
+
 #pragma mark - actions
 - (IBAction)onAddClick:(id)sender {
     if([self.tfSearch.text isEqualToString:@""] || !self.tfSearch.text)return;
@@ -47,6 +48,7 @@
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
 }
+
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return [self.viewModel numberOfSections];
@@ -81,6 +83,7 @@
     }
     return reusableview;
 }
+
 #pragma mark - TBWTagsVMDelegate
 - (void)TBWTagsVMDatasetModified:(TBWTagsVM *)viewModel{
     [self.collectionView reloadData];

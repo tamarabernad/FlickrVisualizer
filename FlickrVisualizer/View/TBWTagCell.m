@@ -11,6 +11,7 @@
 @implementation TBWTagCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     self.layer.cornerRadius = 8;
     self.layer.masksToBounds = YES;
 }

@@ -32,6 +32,7 @@
     }
     return _searchTags;
 }
+
 #pragma mark - Public
 - (void)setTags:(NSArray *)tags{
     [self reset];
@@ -50,6 +51,7 @@
         [self retrieveDataForPage:[self.page.page integerValue] + 1 WithSuccess:nil AndFailure:nil];
     }
 }
+
 #pragma mark - MBXAsyncViewModelProtocol
 - (void)retrieveDataForPage:(NSInteger)page WithSuccess:(void (^)(void))success AndFailure:(void (^)(NSError *))failure{
     self.isLoadingData = YES;

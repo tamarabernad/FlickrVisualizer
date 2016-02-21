@@ -32,6 +32,7 @@
     [self.data removeObjectAtIndex:index];
     [self.delegate TBWTagsVMDatasetModified:self];
 }
+
 #pragma mark - MBXListViewModelProtocol
 - (NSInteger)numberOfItemsInSection:(NSInteger)section{
     return [self.data count];
