@@ -12,4 +12,9 @@ FlickrVisualizer uses two third party libraries:
 # Requirements
 FlickrVisualizer requires iOS 9 and above.
 
+# Features
+Homescreen shows a grid of images of a predefined search. 
+- Search by tag: User can add/remove tags to search on Flickr
+- Detail: On tap on a thumb the user navigates to a detail view of the image
+- Break-it: On tap on the break it button some phyiscs are applied to the thumbs.
 
