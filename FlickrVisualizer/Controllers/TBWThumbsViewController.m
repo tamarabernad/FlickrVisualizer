@@ -34,13 +34,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //TODO move the reuse identifier to the cell with a protocol ReusableCellProtocol and a class method returning the identifier
+    //TODO: move the reuse identifier to the cell with a protocol ReusableCellProtocol and a class method returning the identifier
     UINib *cellNib = [UINib nibWithNibName:NSStringFromClass([TBWThumbCell class]) bundle:[NSBundle mainBundle]];
     [self.collectionView registerNib:cellNib forCellWithReuseIdentifier:NSStringFromClass([TBWThumbCell class])];
 
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     
+    //TODO: control rotation and recalculate items per page
     NSInteger itemsPerRow = floor(self.view.bounds.size.width / CELL_DIM);
     self.itemsPerCol = floor(self.view.bounds.size.height / CELL_DIM);
     [self.viewModel setNumberOfItemsPerPage:self.itemsPerCol*itemsPerRow];

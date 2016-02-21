@@ -39,6 +39,7 @@
 #pragma mark - MBXAsyncViewModelProtocol
 - (void)retrieveDataForPage:(NSInteger)page WithSuccess:(void (^)(void))success AndFailure:(void (^)(NSError *))failure{
     self.isLoadingData = YES;
+    //TODO make the seach tag come through parameter and connect to a UITextfield search
     [TBWDataProvider getImagesWithTags:@"grass" forPage:page withItemsPerPage:self.itemsPerPage withSuccess:^(id result) {
         self.isLoadingData = NO;
         
@@ -63,6 +64,7 @@
 
 #pragma mark - helpers
 - (TBWFlickrPhoto *)photoAtIndex:(NSInteger)index{
+    //TODO: scroll is not infinite yet, make it infinite with an circular array checking index on [self.page totalItems]
     return self.data.count - 1 < index ? nil : [self.data objectAtIndex:index];
 }
 @end
