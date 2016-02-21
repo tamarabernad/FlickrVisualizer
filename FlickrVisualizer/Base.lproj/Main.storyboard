@@ -68,40 +68,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a1Y-ZX-xzU">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a1Y-ZX-xzU">
+                                <rect key="frame" x="0.0" y="64" width="600" height="300"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHt-eN-nfM">
-                                <rect key="frame" x="28" y="318" width="552" height="21"/>
+                                <rect key="frame" x="28" y="382" width="552" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7P-0k-lYf">
-                                <rect key="frame" x="28" y="347" width="552" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YfO-pZ-eWQ">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="OvY-PB-xYq">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="143-gX-aQy">
+                                            <connections>
+                                                <action selector="onCloseClick:" destination="fA7-Zk-cnd" id="TAR-7r-LaQ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JWP-De-M6b">
+                                <rect key="frame" x="23" y="411" width="557" height="169"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="r7P-0k-lYf" firstAttribute="top" secondItem="jHt-eN-nfM" secondAttribute="bottom" constant="8" id="3Cd-1e-xRD"/>
-                            <constraint firstAttribute="trailing" secondItem="r7P-0k-lYf" secondAttribute="trailing" constant="20" id="RLk-xT-p8r"/>
+                            <constraint firstItem="JWP-De-M6b" firstAttribute="leading" secondItem="jHt-eN-nfM" secondAttribute="leading" constant="-5" id="0YK-P7-Fuc"/>
+                            <constraint firstItem="YfO-pZ-eWQ" firstAttribute="leading" secondItem="CFQ-eA-XjO" secondAttribute="leading" id="6cI-5A-Zdy"/>
+                            <constraint firstAttribute="trailing" secondItem="YfO-pZ-eWQ" secondAttribute="trailing" id="WXS-ja-u1a"/>
+                            <constraint firstItem="YfO-pZ-eWQ" firstAttribute="top" secondItem="CFQ-eA-XjO" secondAttribute="top" constant="20" id="ZKW-yD-Fpk"/>
                             <constraint firstItem="jHt-eN-nfM" firstAttribute="leading" secondItem="CFQ-eA-XjO" secondAttribute="leadingMargin" constant="8" id="cVQ-yV-RSE"/>
+                            <constraint firstItem="JWP-De-M6b" firstAttribute="top" secondItem="jHt-eN-nfM" secondAttribute="bottom" constant="8" id="e7P-7L-AhF"/>
                             <constraint firstItem="jHt-eN-nfM" firstAttribute="top" secondItem="a1Y-ZX-xzU" secondAttribute="bottom" constant="18" id="fVr-vM-5o8"/>
-                            <constraint firstItem="a1Y-ZX-xzU" firstAttribute="top" secondItem="CFQ-eA-XjO" secondAttribute="top" id="grl-zy-uVf"/>
-                            <constraint firstItem="r7P-0k-lYf" firstAttribute="leading" secondItem="jHt-eN-nfM" secondAttribute="leading" id="mSw-FF-NL6"/>
+                            <constraint firstItem="JWP-De-M6b" firstAttribute="trailing" secondItem="jHt-eN-nfM" secondAttribute="trailing" id="nya-s4-ld1"/>
                             <constraint firstItem="a1Y-ZX-xzU" firstAttribute="leading" secondItem="CFQ-eA-XjO" secondAttribute="leading" id="q3x-2H-FOy"/>
                             <constraint firstAttribute="trailing" secondItem="a1Y-ZX-xzU" secondAttribute="trailing" id="qDx-EI-V45"/>
                             <constraint firstItem="a1Y-ZX-xzU" firstAttribute="height" secondItem="CFQ-eA-XjO" secondAttribute="height" multiplier="0.5" id="uda-uC-Y8s"/>
+                            <constraint firstItem="a1Y-ZX-xzU" firstAttribute="top" secondItem="YfO-pZ-eWQ" secondAttribute="bottom" id="wlC-wj-pKi"/>
                             <constraint firstAttribute="trailing" secondItem="jHt-eN-nfM" secondAttribute="trailing" constant="20" id="zE9-xJ-GTx"/>
+                            <constraint firstItem="C4m-5B-wtz" firstAttribute="top" secondItem="JWP-De-M6b" secondAttribute="bottom" constant="20" id="zda-Rj-53k"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imgView" destination="a1Y-ZX-xzU" id="kPs-Jk-sXw"/>
-                        <outlet property="lbDescription" destination="r7P-0k-lYf" id="j4G-FD-Zo6"/>
+                        <outlet property="lbDescription" destination="JWP-De-M6b" id="aBr-TU-Yca"/>
                         <outlet property="lbTitle" destination="jHt-eN-nfM" id="q26-bS-DnO"/>
+                        <outlet property="navTitle" destination="OvY-PB-xYq" id="34V-TJ-9a8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mGZ-aI-bXP" userLabel="First Responder" sceneMemberID="firstResponder"/>
