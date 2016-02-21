@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@protocol TBWDetailViewControllerDelegate;
 @interface TBWDetailViewController : UIViewController
-
+@property(nonatomic, weak) id<TBWDetailViewControllerDelegate> delegate;
 - (void)setPhotoId:(NSString *)photoId;
+@end
+
+@protocol TBWDetailViewControllerDelegate <NSObject>
+
+- (void)TBWDetailViewControllerDismiss:(TBWDetailViewController *)controller;
+
 @end

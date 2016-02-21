@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbTitle;
 @property (weak, nonatomic) IBOutlet UITextView *lbDescription;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navTitle;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @property (nonatomic, strong) TBWDetailVM *viewModel;
 @end
@@ -26,7 +27,7 @@
 }
 #pragma mark - actions
 - (IBAction)onCloseClick:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.delegate TBWDetailViewControllerDismiss:self];
 }
 #pragma mark - Lazy getters
 - (TBWDetailVM *)viewModel{
@@ -43,12 +44,27 @@
 }
 - (void)viewDidAppear:(BOOL)animated{
     [self.viewModel retrieveDataWithSuccess:^{
-        [self.imgView setImageWithURL:[NSURL URLWithString:[self.viewModel imageUrl]]];
+        [self loadImage];
         self.lbTitle.text = [self.viewModel title];
         self.lbDescription.text = [self.viewModel body];
         self.navTitle.title = [self.viewModel title];
     } AndFailure:^(NSError *error) {
         //TODO: show error handling
+    }];
+}
+- (void)loadImage{
+    [self.activityIndicator startAnimating];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[self.viewModel imageUrl]]];
+    [request addValue:@"image/*" forHTTPHeaderField:@"Accept"];
+    
+    TBWDetailViewController __weak *weakSelf = self;
+    [self.imgView setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+        [weakSelf.activityIndicator stopAnimating];
+        self.imgView.image = image;
+        
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+        [weakSelf.activityIndicator stopAnimating];
+        self.imgView.image = nil;
     }];
 }
 @end

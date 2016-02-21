@@ -13,12 +13,14 @@
 #import "TBWThumbsHeaderView.h"
 
 #define CELL_DIM 100.0
-@interface TBWThumbsViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, TBWThumbsVMDelegate, TBWThumbsHeaderViewDelegate>
+@interface TBWThumbsViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, TBWThumbsVMDelegate, TBWThumbsHeaderViewDelegate, TBWDetailViewControllerDelegate>
 {
     UIDynamicAnimator* _animator;
     UIGravityBehavior* _gravity;
+    UIGravityBehavior* _gravity2;
     UICollisionBehavior* _collision;
     UIPushBehavior *pushBehavior;
+//    UIFieldBehavior *f;
 }
 @property (nonatomic, strong) TBWThumbsVM *viewModel;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -64,6 +66,7 @@
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     TBWDetailViewController *vc = (TBWDetailViewController *)segue.destinationViewController;
+    vc.delegate = self;
     [vc setPhotoId:sender];
 }
 #pragma mark - UICollectionViewDataSource
@@ -98,25 +101,33 @@
 
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    [self performSegueWithIdentifier:@"segue-detail" sender:[self.viewModel getFlickrPhotoIdAtIndexPath:indexPath]];
-//    UICollectionViewCell *clickedCell = [self.collectionView cellForItemAtIndexPath:indexPath];
-//    [self.collectionView bringSubviewToFront:clickedCell];
-//    
-//    NSArray *cells = @[clickedCell];//[[self.collectionView visibleCells] filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self != %@",clickedCell]];
-//
+    
+    UICollectionViewCell *clickedCell = [self.collectionView cellForItemAtIndexPath:indexPath];
+    [self.collectionView bringSubviewToFront:clickedCell];
+    NSArray *cells = [[self.collectionView visibleCells] filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self != %@",clickedCell]];
+    
 //    _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
-//    _gravity = [[UIGravityBehavior alloc] initWithItems:cells];
-//    [_animator addBehavior:_gravity];
-//    _collision = [[UICollisionBehavior alloc]
-//                  initWithItems:cells];
-//    [_collision setTranslatesReferenceBoundsIntoBoundary:YES];
-//    [_animator addBehavior:_collision];
-//    UIDynamicItemBehavior* itemBehaviour = [[UIDynamicItemBehavior alloc] initWithItems:cells];
-//    itemBehaviour.elasticity = 0.8;
-//    [_animator addBehavior:itemBehaviour];
+//        UIFieldBehavior *f;
+//    f  = [UIFieldBehavior radialGravityFieldWithPosition:clickedCell.frame.origin];
+//    f.region = [[UIRegion alloc] initWithRadius:300.0];
+//    f.strength = -30;
+//    f.falloff = 1.0;
+//    f.minimumRadius = 600.0;
+//    for (UICollectionViewCell *c in cells) {
+//        [f addItem:c];
+//    }
+//    [_animator addBehavior:f];
+    
+    [UIView animateWithDuration:1 animations:^{
+        clickedCell.transform = CGAffineTransformScale(clickedCell.transform, 4, 4);
+    }];
+
+    [self performSelector:@selector(showDetailWithIndexPath:) withObject:indexPath afterDelay:1];
 
 }
-
+- (void)showDetailWithIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"segue-detail" sender:[self.viewModel getFlickrPhotoIdAtIndexPath:indexPath]];
+}
 #pragma mark - TBWThumbsVMDelegate
 - (void)TBWThumbsVMDidLoadData:(TBWThumbsVM *)viewModel{
     [self.collectionView reloadData];
@@ -125,5 +136,11 @@
 #pragma mark - TBWThumbsHeaderViewDelegate
 - (void)TBWThumbsHeaderView:(TBWThumbsHeaderView *)view didUpdateTags:(NSArray *)tags{
     [self.viewModel setTags:tags];
+}
+
+#pragma mark - TBWDetailViewControllerDelegate
+- (void)TBWDetailViewControllerDismiss:(TBWDetailViewController *)controller{
+    [controller dismissViewControllerAnimated:YES completion:nil];
+    [self.collectionView reloadData];
 }
 @end
