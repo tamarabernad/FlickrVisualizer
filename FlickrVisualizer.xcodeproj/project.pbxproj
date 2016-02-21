@@ -56,6 +56,9 @@
 		63B381851C799F7400A094BF /* MBXMappedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B381841C799F7400A094BF /* MBXMappedParser.m */; };
 		63B381861C799F7400A094BF /* MBXMappedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B381841C799F7400A094BF /* MBXMappedParser.m */; };
 		63B381871C799F7400A094BF /* MBXMappedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B381841C799F7400A094BF /* MBXMappedParser.m */; };
+		63B3818A1C79AD9300A094BF /* TBWThumbsHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B381891C79AD9300A094BF /* TBWThumbsHeaderView.m */; };
+		63B3818B1C79AD9300A094BF /* TBWThumbsHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B381891C79AD9300A094BF /* TBWThumbsHeaderView.m */; };
+		63B3818C1C79AD9300A094BF /* TBWThumbsHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B381891C79AD9300A094BF /* TBWThumbsHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +126,8 @@
 		63B3817F1C79961600A094BF /* TBWDetailVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBWDetailVM.m; sourceTree = "<group>"; };
 		63B381831C799F7400A094BF /* MBXMappedParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBXMappedParser.h; sourceTree = "<group>"; };
 		63B381841C799F7400A094BF /* MBXMappedParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBXMappedParser.m; sourceTree = "<group>"; };
+		63B381881C79AD9300A094BF /* TBWThumbsHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBWThumbsHeaderView.h; sourceTree = "<group>"; };
+		63B381891C79AD9300A094BF /* TBWThumbsHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBWThumbsHeaderView.m; sourceTree = "<group>"; };
 		8DEED9724C4C6EE7A0722752 /* libPods-FlickrVisualizerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlickrVisualizerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC343D603393A199B9C20AB7 /* Pods-FlickrVisualizerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrVisualizerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrVisualizerTests/Pods-FlickrVisualizerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CDEFEE61CD1EFA28C5C21182 /* Pods-FlickrVisualizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrVisualizer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrVisualizer/Pods-FlickrVisualizer.debug.xcconfig"; sourceTree = "<group>"; };
@@ -289,6 +294,8 @@
 				63B381411C78486B00A094BF /* TBWThumbCell.h */,
 				63B381421C78486B00A094BF /* TBWThumbCell.m */,
 				63B381431C78486B00A094BF /* TBWThumbCell.xib */,
+				63B381881C79AD9300A094BF /* TBWThumbsHeaderView.h */,
+				63B381891C79AD9300A094BF /* TBWThumbsHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -586,6 +593,7 @@
 				63B3817B1C7995BB00A094BF /* TBWDetailViewController.m in Sources */,
 				63B381531C784C3800A094BF /* MBXBaseService.m in Sources */,
 				630463711C778CD2004DAF2B /* main.m in Sources */,
+				63B3818A1C79AD9300A094BF /* TBWThumbsHeaderView.m in Sources */,
 				63B381751C7854BF00A094BF /* TBWFlickrFeedPage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -607,6 +615,7 @@
 				63B3817C1C7995BB00A094BF /* TBWDetailViewController.m in Sources */,
 				63B381541C784C3800A094BF /* MBXBaseService.m in Sources */,
 				630463AE1C7791C4004DAF2B /* FlickrApiTests.m in Sources */,
+				63B3818B1C79AD9300A094BF /* TBWThumbsHeaderView.m in Sources */,
 				63B381761C7854BF00A094BF /* TBWFlickrFeedPage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -615,6 +624,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63B3818C1C79AD9300A094BF /* TBWThumbsHeaderView.m in Sources */,
 				63B381331C7843B000A094BF /* TBWThumbsVM.m in Sources */,
 				63B3816F1C78517700A094BF /* MBXBaseParseParser.m in Sources */,
 				63B381551C784C3800A094BF /* MBXBaseService.m in Sources */,

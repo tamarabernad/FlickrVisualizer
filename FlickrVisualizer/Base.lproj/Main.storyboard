@@ -20,16 +20,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jpv-AU-znz">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="8Vk-tp-srY">
                                     <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="84"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="r9S-6N-UmC">
-                                        <rect key="frame" x="5" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="5" y="84" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -38,6 +38,62 @@
                                         </view>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="header-view" id="Xv3-Rr-RQr" customClass="TBWThumbsHeaderView">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="84"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="q2F-tM-gjZ">
+                                            <rect key="frame" x="0.0" y="44" width="600" height="40"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wbg-sB-G6Q">
+                                                <size key="itemSize" width="50" height="40"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eZ6-TG-4H3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="40"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                </collectionViewCell>
+                                            </cells>
+                                        </collectionView>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="250" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ord-Rt-t7f">
+                                            <rect key="frame" x="8" y="8" width="517" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="aai-uI-xpj"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocr-PM-wiJ">
+                                            <rect key="frame" x="533" y="8" width="46" height="30"/>
+                                            <state key="normal" title="Button"/>
+                                            <connections>
+                                                <action selector="onAddClick:" destination="Xv3-Rr-RQr" eventType="touchUpInside" id="zyz-sL-kPp"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ord-Rt-t7f" firstAttribute="top" secondItem="Xv3-Rr-RQr" secondAttribute="top" constant="8" id="0wn-BP-Nt5"/>
+                                        <constraint firstAttribute="bottom" secondItem="q2F-tM-gjZ" secondAttribute="bottom" id="2cS-If-2Oj"/>
+                                        <constraint firstItem="ord-Rt-t7f" firstAttribute="leading" secondItem="Xv3-Rr-RQr" secondAttribute="leading" constant="8" id="61f-a9-3s2"/>
+                                        <constraint firstItem="ocr-PM-wiJ" firstAttribute="top" secondItem="Xv3-Rr-RQr" secondAttribute="top" constant="8" id="MDH-Kz-EjP"/>
+                                        <constraint firstAttribute="trailing" secondItem="ocr-PM-wiJ" secondAttribute="trailing" constant="21" id="i3P-ee-DMq"/>
+                                        <constraint firstItem="ocr-PM-wiJ" firstAttribute="leading" secondItem="ord-Rt-t7f" secondAttribute="trailing" constant="8" id="j6I-Gt-wes"/>
+                                        <constraint firstItem="q2F-tM-gjZ" firstAttribute="leading" secondItem="Xv3-Rr-RQr" secondAttribute="leading" id="wIg-0V-NTQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="q2F-tM-gjZ" secondAttribute="trailing" id="xah-BE-5mK"/>
+                                        <constraint firstItem="q2F-tM-gjZ" firstAttribute="top" secondItem="ocr-PM-wiJ" secondAttribute="bottom" constant="6" id="y6C-Oo-d7I"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="collectionView" destination="q2F-tM-gjZ" id="xQM-tn-60M"/>
+                                        <outlet property="tfSearch" destination="ord-Rt-t7f" id="R5k-V1-2EY"/>
+                                    </connections>
+                                </collectionReusableView>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -45,7 +101,7 @@
                             <constraint firstAttribute="trailing" secondItem="Jpv-AU-znz" secondAttribute="trailing" id="9nY-y1-mbU"/>
                             <constraint firstItem="Jpv-AU-znz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SI2-Kh-SeY"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Jpv-AU-znz" secondAttribute="bottom" id="sM6-P8-Lkd"/>
-                            <constraint firstItem="Jpv-AU-znz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="yyL-XR-kui"/>
+                            <constraint firstItem="Jpv-AU-znz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="yyL-XR-kui"/>
                         </constraints>
                     </view>
                     <connections>
@@ -55,6 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="295" y="372"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="aOJ-SC-Bmg">

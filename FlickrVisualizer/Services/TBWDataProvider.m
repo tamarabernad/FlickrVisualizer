@@ -19,6 +19,7 @@
 
     MBXBaseService *service = [[MBXBaseService alloc] initWithParser:nil AndConnector:[TBWFlickrKitConnector new]];
     [service getObjectsWithParams:@{@"tags":tags, @"per_page":[NSString stringWithFormat:@"%li",(long)itemsPerPage], @"page":[NSString stringWithFormat:@"%li",(long)page]} success:^(id responseObject) {
+
         MBXBaseParseParser *pageParser = [MBXBaseParseParser newParserWithModelClass:[TBWFlickrFeedPage class]];
         [pageParser processWithData:[responseObject valueForKey:@"photos"] AndCompletion:^(id result) {
             TBWFlickrFeedPage *page = result;

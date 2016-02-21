@@ -10,6 +10,7 @@
 #import "TBWThumbsVM.h"
 #import "TBWThumbCell.h"
 #import "TBWDetailViewController.h"
+#import "TBWThumbsHeaderView.h"
 
 #define CELL_DIM 100.0
 @interface TBWThumbsViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, TBWThumbsVMDelegate>
@@ -82,6 +83,16 @@
                   layout:(UICollectionViewLayout*)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     return CGSizeMake(CELL_DIM, CELL_DIM);
+}
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionReusableView *reusableview = nil;
+    
+    if (kind == UICollectionElementKindSectionHeader) {
+        TBWThumbsHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header-view" forIndexPath:indexPath];
+        reusableview = headerView;
+    }
+    return reusableview;
 }
 
 #pragma mark - UICollectionViewDelegate
