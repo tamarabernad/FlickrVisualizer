@@ -9,7 +9,7 @@
 #import "TBWThumbsHeaderView.h"
 #import "TBWTagCell.h"
 #import "TBWTagsVM.h"
-@interface TBWThumbsHeaderView()<UICollectionViewDataSource, UICollectionViewDelegate, TBWTagsVMDelegate>
+@interface TBWThumbsHeaderView()<UICollectionViewDataSource, UICollectionViewDelegate, TBWTagsVMDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UITextField *tfSearch;
 @property (nonatomic, strong) TBWTagsVM *viewModel;
@@ -34,9 +34,7 @@
 
 #pragma mark - actions
 - (IBAction)onAddClick:(id)sender {
-    if([self.tfSearch.text isEqualToString:@""] || !self.tfSearch.text)return;
-    [self.viewModel addTag:self.tfSearch.text];
-    self.tfSearch.text = @"";
+    [self search];
 }
 - (void)onDeleteClick:(id)sender{
     [self.viewModel removeTagAtIndex:((UIButton *)sender).tag];
@@ -47,6 +45,8 @@
     
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
+    
+    self.tfSearch.delegate = self;
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -88,5 +88,18 @@
 - (void)TBWTagsVMDatasetModified:(TBWTagsVM *)viewModel{
     [self.collectionView reloadData];
     [self.delegate TBWThumbsHeaderView:self didUpdateTags:[self.viewModel tags]];
+}
+
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [self search];
+    return YES;
+}
+
+#pragma mark - helpers
+- (void)search{
+    if([self.tfSearch.text isEqualToString:@""] || !self.tfSearch.text)return;
+    [self.viewModel addTag:self.tfSearch.text];
+    self.tfSearch.text = @"";
 }
 @end
