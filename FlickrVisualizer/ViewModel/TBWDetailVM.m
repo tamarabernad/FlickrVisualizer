@@ -14,11 +14,17 @@
 
 @property(nonatomic, strong)NSString *photoId;
 @property(nonatomic, strong)TBWFlickrPhoto *data;
-
+@property (nonatomic, strong) TBWDataProvider *dataProvider;
 @end
 @implementation TBWDetailVM
 
 #pragma mark - public
+- (TBWDataProvider *)dataProvider{
+    if(!_dataProvider){
+        _dataProvider = [TBWDataProvider new];
+    }
+    return _dataProvider;
+}
 - (NSString *)imageUrl{
     return [self.data imageUrlLarge];
 }
@@ -30,8 +36,9 @@
 }
 #pragma mark - MBXAsyncViewModelProtocol
 - (void)retrieveDataWithSuccess:(void (^)(void))success AndFailure:(void (^)(NSError *))failure{
-    [TBWDataProvider getPhotoInfoWithId:self.photoId withSuccess:^(id result) {
-        self.data = result;
+    TBWDetailVM __weak *weakSelf = self;
+    [self.dataProvider getPhotoInfoWithId:self.photoId withSuccess:^(id result) {
+        weakSelf.data = result;
         success();
     } failure:failure];
 }

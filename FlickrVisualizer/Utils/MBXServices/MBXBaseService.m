@@ -19,17 +19,19 @@
     return self;
 }
 - (void)getObjectsWithParams:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure{
+    MBXBaseService __weak *weakSelf = self;
     [self.connector getObjectsWithParams:params success:^(id responseObject) {
-        if(self.parser != nil)
-            [self.parser processDataArray:responseObject WithCompletion:success];
+        if(weakSelf.parser != nil)
+            [weakSelf.parser processDataArray:responseObject WithCompletion:success];
         else
             success(responseObject);
     } failure:failure];
 }
 - (void)getObjectWithParams:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure{
+    MBXBaseService __weak *weakSelf = self;
     [self.connector getObjectWithParams:params success:^(id responseObject) {
-        if(self.parser != nil)
-            [self.parser processWithData:responseObject AndCompletion:success];
+        if(weakSelf.parser != nil)
+            [weakSelf.parser processWithData:responseObject AndCompletion:success];
         else
             success(responseObject);
     } failure:failure];

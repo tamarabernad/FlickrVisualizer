@@ -46,11 +46,12 @@
     self.navTitle.title = @"";
 }
 - (void)viewDidAppear:(BOOL)animated{
+    TBWDetailViewController __weak *weakSelf = self;
     [self.viewModel retrieveDataWithSuccess:^{
-        [self loadImage];
-        self.lbTitle.text = [self.viewModel title];
-        self.lbDescription.text = [self.viewModel body];
-        self.navTitle.title = [self.viewModel title];
+        [weakSelf loadImage];
+        weakSelf.lbTitle.text = [weakSelf.viewModel title];
+        weakSelf.lbDescription.text = [weakSelf.viewModel body];
+        weakSelf.navTitle.title = [weakSelf.viewModel title];
     } AndFailure:^(NSError *error) {
         //TODO: show error handling
     }];
@@ -63,11 +64,11 @@
     TBWDetailViewController __weak *weakSelf = self;
     [self.imgView setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
         [weakSelf.activityIndicator stopAnimating];
-        self.imgView.image = image;
+        weakSelf.imgView.image = image;
         
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
         [weakSelf.activityIndicator stopAnimating];
-        self.imgView.image = nil;
+        weakSelf.imgView.image = nil;
     }];
 }
 @end

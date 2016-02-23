@@ -16,10 +16,17 @@
 @property(nonatomic) BOOL isLoadingData;
 @property (nonatomic, strong) TBWFlickrFeedPage *page;
 @property (nonatomic, strong)NSString *searchTags;
+@property (nonatomic, strong) TBWDataProvider *dataProvider;
 @end
 @implementation TBWThumbsVM
 
 #pragma mark - Lazy getters
+- (TBWDataProvider *)dataProvider{
+    if(!_dataProvider){
+        _dataProvider = [TBWDataProvider new];
+    }
+    return _dataProvider;
+}
 - (NSArray *)data{
     if(!_data){
         _data = @[];
@@ -55,18 +62,19 @@
 #pragma mark - MBXAsyncViewModelProtocol
 - (void)retrieveDataForPage:(NSInteger)page WithSuccess:(void (^)(void))success AndFailure:(void (^)(NSError *))failure{
     self.isLoadingData = YES;
-
-    [TBWDataProvider getImagesWithTags:self.searchTags forPage:page withItemsPerPage:[self nItemsToRequest] withSuccess:^(id result) {
-        self.isLoadingData = NO;
+    
+    TBWThumbsVM __weak *weakSelf = self;
+    [self.dataProvider getImagesWithTags:self.searchTags forPage:page withItemsPerPage:[self nItemsToRequest] withSuccess:^(id result) {
+        weakSelf.isLoadingData = NO;
         
         NSMutableArray *arr = [NSMutableArray arrayWithArray:[result valueForKey:@"photos"]];
-        self.data = [self.data arrayByAddingObjectsFromArray:arr];
-        self.page = [result valueForKey:@"page"];
-        [self.delegate TBWThumbsVMDidLoadData:self];
+        weakSelf.data = [weakSelf.data arrayByAddingObjectsFromArray:arr];
+        weakSelf.page = [result valueForKey:@"page"];
+        [weakSelf.delegate TBWThumbsVMDidLoadData:weakSelf];
         if(success)success();
     } failure:^(NSError *error) {
-        self.data = @[];
-       [self.delegate TBWThumbsVMDidLoadData:self];
+        weakSelf.data = @[];
+       [weakSelf.delegate TBWThumbsVMDidLoadData:weakSelf];
     }];
 }
 
