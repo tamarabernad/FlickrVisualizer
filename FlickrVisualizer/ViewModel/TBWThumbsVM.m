@@ -44,7 +44,7 @@
 - (void)setTags:(NSArray *)tags{
     [self reset];
     self.searchTags = [tags componentsJoinedByString:@","];
-    [self retrieveDataForPage:0 WithSuccess:nil AndFailure:nil];
+    [self retrieveDataForPage:0 WithSuccess:nil AndFailure:nil NotifyDelegate:YES];
 }
 - (NSString *)getFlickrPhotoIdAtIndexPath:(NSIndexPath *)indexPath{
     return [self photoAtIndex:indexPath.row].uid;
@@ -59,8 +59,11 @@
     }
 }
 
-#pragma mark - MBXAsyncViewModelProtocol
+#pragma mark - Data provisioning
 - (void)retrieveDataForPage:(NSInteger)page WithSuccess:(void (^)(void))success AndFailure:(void (^)(NSError *))failure{
+    [self retrieveDataForPage:page WithSuccess:success AndFailure:failure NotifyDelegate:NO];
+}
+- (void)retrieveDataForPage:(NSInteger)page WithSuccess:(void (^)(void))success AndFailure:(void (^)(NSError *))failure NotifyDelegate:(BOOL)notify{
     self.isLoadingData = YES;
     
     TBWThumbsVM __weak *weakSelf = self;
@@ -70,11 +73,11 @@
         NSMutableArray *arr = [NSMutableArray arrayWithArray:[result valueForKey:@"photos"]];
         weakSelf.data = [weakSelf.data arrayByAddingObjectsFromArray:arr];
         weakSelf.page = [result valueForKey:@"page"];
-        [weakSelf.delegate TBWThumbsVMDidLoadData:weakSelf];
+        if(notify)[weakSelf.delegate TBWThumbsVMDidLoadData:weakSelf];
         if(success)success();
     } failure:^(NSError *error) {
         weakSelf.data = @[];
-       [weakSelf.delegate TBWThumbsVMDidLoadData:weakSelf];
+       if(notify)[weakSelf.delegate TBWThumbsVMDidLoadData:weakSelf];
     }];
 }
 

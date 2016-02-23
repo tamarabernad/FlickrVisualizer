@@ -33,6 +33,7 @@
 
         MBXBaseParser *pageParser = [MBXBaseParser newParserWithModelClass:[TBWFlickrFeedPage class]];
         [pageParser processWithData:[responseObject valueForKey:@"photos"] AndCompletion:^(id result) {
+
             TBWFlickrFeedPage *page = result;
             MBXBaseParser *photosParser = [MBXBaseParser newParserWithModelClass:[TBWFlickrPhoto class]];
             [photosParser processDataArray:[responseObject valueForKeyPath:@"photos.photo"] WithCompletion:^(id result) {

@@ -36,11 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlickrVisualizer/Controllers/TBWThumbsViewController.m"
-            timestampString = "477776970.997579"
+            timestampString = "477954172.119809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164">
+            startingLineNumber = "167"
+            endingLineNumber = "167">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
