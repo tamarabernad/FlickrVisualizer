@@ -20,6 +20,7 @@
 - (void)setImageUrl:(NSString *)url{
     self.imgView.image = nil;
     [self.activityIndicator startAnimating];
+    [self.imgView cancelImageDownloadTask];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     [request addValue:@"image/*" forHTTPHeaderField:@"Accept"];
