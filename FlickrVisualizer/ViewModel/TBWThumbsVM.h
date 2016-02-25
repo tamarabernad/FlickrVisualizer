@@ -14,7 +14,7 @@
 @interface TBWThumbsVM : NSObject<MBXListViewModelProtocol>
 
 @property(nonatomic, weak)id<TBWThumbsVMDelegate> delegate;
-- (void)retrieveDataForPage:(NSInteger)page WithSuccess:(void (^)(void))success AndFailure:(void (^)(NSError *))failure;
+- (void)retrieveDataForPage:(NSInteger)page;
 - (void)setNumberOfItemsPerPage:(NSInteger)nItemsPerPage;
 - (void)checkDataForIndexPath:(NSIndexPath *)indexPath;
 - (NSString *)getFlickrPhotoIdAtIndexPath:(NSIndexPath *)indexPath;

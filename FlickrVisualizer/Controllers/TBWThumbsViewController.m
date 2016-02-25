@@ -58,10 +58,7 @@
     
 }
 - (void)viewDidAppear:(BOOL)animated{
-    TBWThumbsViewController __weak *weakSelf = self;
-    [self.viewModel retrieveDataForPage:0 WithSuccess:^{
-        [weakSelf.collectionView reloadData];
-    } AndFailure:nil];
+    [self.viewModel retrieveDataForPage:0];
 }
 
 #pragma mark - Navigation

@@ -44,7 +44,7 @@
 - (void)setTags:(NSArray *)tags{
     [self reset];
     self.searchTags = [tags componentsJoinedByString:@","];
-    [self retrieveDataForPage:0 WithSuccess:nil AndFailure:nil NotifyDelegate:YES];
+    [self retrieveDataForPage:0 notifyDataSetChange:YES];
 }
 - (NSString *)getFlickrPhotoIdAtIndexPath:(NSIndexPath *)indexPath{
     return [self photoAtIndex:indexPath.row].uid;
@@ -55,15 +55,15 @@
 - (void)checkDataForIndexPath:(NSIndexPath *)indexPath{
 
     if((indexPath.row >= [self.page.page integerValue] * [self.page.perpage integerValue]) && !self.isLoadingData){
-        [self retrieveDataForPage:[self.page.page integerValue] + 1 WithSuccess:nil AndFailure:nil];
+        [self retrieveDataForPage:[self.page.page integerValue] + 1 notifyDataSetChange:NO];
     }
 }
 
 #pragma mark - Data provisioning
-- (void)retrieveDataForPage:(NSInteger)page WithSuccess:(void (^)(void))success AndFailure:(void (^)(NSError *))failure{
-    [self retrieveDataForPage:page WithSuccess:success AndFailure:failure NotifyDelegate:NO];
+- (void)retrieveDataForPage:(NSInteger)page{
+    [self retrieveDataForPage:page notifyDataSetChange:YES];
 }
-- (void)retrieveDataForPage:(NSInteger)page WithSuccess:(void (^)(void))success AndFailure:(void (^)(NSError *))failure NotifyDelegate:(BOOL)notify{
+- (void)retrieveDataForPage:(NSInteger)page notifyDataSetChange:(BOOL)notify{
     self.isLoadingData = YES;
     
     TBWThumbsVM __weak *weakSelf = self;
@@ -74,10 +74,10 @@
         weakSelf.data = [weakSelf.data arrayByAddingObjectsFromArray:arr];
         weakSelf.page = [result valueForKey:@"page"];
         if(notify)[weakSelf.delegate TBWThumbsVMDidLoadData:weakSelf];
-        if(success)success();
     } failure:^(NSError *error) {
+        weakSelf.isLoadingData = NO;
         weakSelf.data = @[];
-       if(notify)[weakSelf.delegate TBWThumbsVMDidLoadData:weakSelf];
+       [weakSelf.delegate TBWThumbsVMDidLoadData:weakSelf];
     }];
 }
 
